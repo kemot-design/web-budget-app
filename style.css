@@ -1,0 +1,65 @@
+body
+{
+	background-color: #666666;
+}
+
+#container
+{
+	background-color: #555555;
+	color: #ffffff;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#topbar
+{
+	background-color: #444444;
+	height: 30px;
+	text-align: left;
+	margin-top: 10px;
+	font-size: 20px;
+	padding-top: 5px;
+	padding-left: 5px;
+	
+}
+
+h2
+{
+	font-size: 50px;
+	text-align: center;
+}
+
+#form
+{
+	background-color: #444444;
+	width: 600px;
+	margin-left: 200px;
+	margin-right: 200px;
+	height: 250px;
+}
+
+#labels{
+	float: left;
+	font-size: 30px;
+	test-align: right;
+	width: 200px;
+}
+
+#input{
+	float: left;
+	width: 400px;
+	padding-top: 10px;
+}
+
+
+
+#footer
+{
+	background-color: #444444;
+	height: 30px;
+	text-align: center;
+	margin-top: 140px;
+	font-size: 20px;
+	padding-top: 5px;
+}
