@@ -1,15 +1,11 @@
 body
 {
-	background-color: #666666;
-}
-
-#container
-{
-	background-color: #555555;
-	color: #ffffff;
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
+	/* Background pattern from Toptal Subtle Patterns */
+	background-image: url("img/dark-honeycomb.png");
+	margin: 0px;
+	padding: 0px;
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #topbar
@@ -17,49 +13,105 @@ body
 	background-color: #444444;
 	height: 30px;
 	text-align: left;
-	margin-top: 10px;
+	margin: 0px;
 	font-size: 20px;
-	padding-top: 5px;
-	padding-left: 5px;
+	padding: 5px;
+	color: #fefefe;
+	line-height: 30px;
 	
+}
+
+#container
+{
+	background-color: #dedede;
+	width: 300px;
+	padding: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 90px;
+	margin-bottom: 90px;
+	-webkit-box-shadow: 3px 3px 30px 3px rgba(159,185,194,0.9);
+	-moz-box-shadow: 3px 3px 30px 3px rgba(159,185,194,0.9);
+	box-shadow: 3px 3px 30px 3px rgba(159,185,194,0.9);
+	border-radius: 3px;
 }
 
 h2
 {
-	font-size: 50px;
-	text-align: center;
-}
-
-#form
-{
-	background-color: #444444;
-	width: 600px;
-	margin-left: 200px;
-	margin-right: 200px;
-	height: 250px;
-}
-
-#labels{
-	float: left;
 	font-size: 30px;
-	test-align: right;
-	width: 200px;
+	text-align: center;
+	margin-top: 0px;
+	letter-spacing: 5px;
 }
 
-#input{
-	float: left;
-	width: 400px;
-	padding-top: 10px;
+input
+{
+	width: 300px;
+	background-color: #efefef;
+	color: #444;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	padding: 10px;
+	fonmt-size: 20px;
+	box-sizing: border-box;
+	outline: none;
+
 }
 
+input[type=text],
+input[type=password]
+{
+	
+}
 
+input[type=text]:focus,
+input[type=password]:focus
+{
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(159,185,194,0.9);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(159,185,194,0.9);
+	box-shadow: 0px 0px 10px 2px rgba(159,185,194,0.9);
+	border: 2px solid #a5cda5;
+	background-color: #e9f3e9;
+}
+
+input[type=submit]
+{
+	background-color: #46c768;
+	font-weight: 700;
+	cursor: pointer;
+	font-size: 20px;
+	padding: 15px 10px;
+	border: none;
+	color: white;
+	margin: 0;
+	margin-top: 10px;
+	letter-spacing: 2px;
+}
+
+input[type=submit]:hover
+{
+	background-color: #35b657;
+}
+
+input[type=submit]:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
+}
 
 #footer
 {
 	background-color: #444444;
+	color: #efefef;
 	height: 30px;
 	text-align: center;
-	margin-top: 140px;
 	font-size: 20px;
-	padding-top: 5px;
+	padding: 5px;
+	line-height: 30px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
