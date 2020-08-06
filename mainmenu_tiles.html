@@ -10,93 +10,89 @@
 	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
 	
 	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 	
 </head>
 
+<!--
+Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+Icons made by <a href="https://www.flaticon.com/free-icon/balance_2072721" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+-->
+
 <body>
+
 	<div class="wrapper">
+	
 		<div class="header">
 			<div class="logo">
-				<!--Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
+
 				<img src="img/budget.png" style="float: left;" />
 				<span style="color: #85bb65;">My</span>Budget
 				<div style="clear: both;"></div>
-			</div>
-		</div>
-		
-		<nav>
-			<div class="nav">
-				<ol>
-					<li><a href="#">Strona główna</a></li>
-					<li><a href="#">Dodaj przychód</a></li>
-					<li><a href="#">Dodaj wydatek</a></li>
-					<li><a href="#">Przeglądaj bilans</a></li>
-					<li><a href="#">Ustawienia</a></li>
-					<li><a href="#">Wyloguj się</a></li>
-				</ol>
-			</div>
-		</nav>
-		
-		
-			<div class="content">
 				
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget rhoncus mi, in vestibulum lorem. Nulla urna mauris, egestas nec erat vel, tempus ullamcorper dolor. Maecenas eu mattis arcu. Aliquam dapibus quis risus eget consequat. Curabitur eu convallis urna, vitae scelerisque est. Nunc eget posuere urna. Nulla facilisi. Phasellus blandit eleifend aliquet. Curabitur porttitor pharetra pretium. Nam ac eros laoreet, consequat felis at, auctor metus.</p>
-
-				<p>Etiam condimentum sed lectus at laoreet. Fusce pellentesque porta purus a venenatis. Quisque erat augue, malesuada nec ultrices vitae, consequat sed metus. Donec at ipsum viverra mauris feugiat euismod. Morbi ultrices tellus libero, et gravida tortor laoreet eget. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi auctor interdum ornare. Praesent vel urna volutpat, accumsan erat at, pharetra urna. Pellentesque egestas sodales nibh vitae sodales. Suspendisse laoreet risus neque, viverra dictum leo condimentum vitae. Sed sem diam, blandit eu vestibulum in, tempor nec lacus. Nullam lacinia commodo elit, sed euismod leo. Suspendisse porttitor sem mi, fringilla viverra diam tincidunt ut.</p>
-
-			</div>
-		
-		<div class="socialbar">
-			<div class="socialtiles">
-				<div class="fb">
-					<a href="https://www.facebook.com/" target="_blank"><i class="icon-facebook-squared"></i></a>
-				</div>
-				<div class="yt">
-					<i class="icon-youtube"></i>
-				</div>
-				<div class="tw">
-					<i class="icon-twitter"></i>
-				</div>
-				<div class="gplus">
-					<i class="icon-gplus"></i>
-				</div>
-				<div style="clear: both;"></div>
 			</div>
 		</div>
 		
-		<div id="footer">
-			MyBudget &copy; 2020 Dziękuję za wizytę. Niech moc będzie z Tobą!
-		</div>
+		<main>
+			<div class="mainmenu">
+				<div class="west">
+				
+					<div class="smalltile">
+						<a href="#">
+							<img src="img/income.png"><br/>
+							Add new income
+						</a>
+					</div>
+					
+					<div class="smalltile">
+						<a href="#">
+							<img src="img/expense.png"><br/>
+							Add new expense
+						</a>
+					</div>
+					
+					<div style="clear: both"></div>
+					
+					<div class="bigtile">
+						<a href="#">	
+							<img src="img/balance.png"><br/>
+							Show balance
+						</a>
+					</div>
+								
+				</div>
+				
+				<div class="east">
+				
+					<div class="smalltile">
+						<a href="#">
+							<img src="img/gear.png"><br/>
+							Ustawienia
+						</a>
+					</div>
+					
+					<div class="smalltile">
+						<a href="#">
+							<img src="img/exit.png"><br/>
+							Wyloguj się
+						</a>
+					</div>
+								
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</main>
 		
 	</div>
-	
-	<script src="jquery-1.11.3.min.js"></script>
-	
-	<script>
 
-	$(document).ready(function() {
-	var NavY = $('.nav').offset().top;
-	 
-	var stickyNav = function(){
-	var ScrollY = $(window).scrollTop();
-		  
-	if (ScrollY > NavY) { 
-		$('.nav').addClass('sticky');
-	} else {
-		$('.nav').removeClass('sticky'); 
-	}
-	};
-	 
-	stickyNav();
-	 
-	$(window).scroll(function() {
-		stickyNav();
-	});
-	});
-	
-	</script>
+	<footer>
+		<div class="footer">
+			Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
+		</div>
+	</footer>
 		
 </body>
 </html>
