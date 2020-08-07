@@ -336,6 +336,8 @@ ol > li:hover
 .formwrapper h2
 {
 	text-align: center;
+	font-size: 35px;
+	color: #33cc33;
 }
 
 .formwrapper input[type=number],
@@ -356,4 +358,55 @@ ol > li:hover
 {
 	float: left;
 	width: 286px;
+}
+
+.row
+{
+	margin-top: 20px;
+}
+
+.notFixedFooter
+{
+	background-color: #202020;
+	color: #efefef;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 20px;
+	padding: 10px;
+	margin-top: 20px;	
+}
+
+textarea
+{
+	margin-left: 10px;
+}
+
+#dateLabel
+{
+	margin-left: 20px;
+}
+
+.buttonsRow
+{
+	text-align: center;
+}
+
+input[type=button]
+{
+	background-color: #ff3300;
+	font-weight: 700;
+	cursor: pointer;
+	font-size: 20px;
+	padding: 15px 10px;
+	border: none;
+	color: #fff;
+	margin: 0;
+	margin-top: 10px;
+	letter-spacing: 2px;
+}
+
+input[type=button]:hover
+{
+	background-color: #e62e00;
 }

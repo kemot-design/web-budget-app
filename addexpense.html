@@ -55,54 +55,75 @@
 				
 					<form action="#" method="POST">
 						
-						<div><label> Kwota: <input type="number" name="expenseValue" step="0.01"></label></div>
-						<div><label> Data: <input type="date" name="expenseDate" step="0.01"></label></div>
+						<div class="row">
+							<label> Kwota: <input type="number" name="expenseValue" id="expenseValue" step="0.01"></label>
+
+							<label id="dateLabel"> Data: <input type="date" name="expenseDate" step="0.01"></label>
+						</div>
 						
-						<fieldset>
-							<legend>Sposób płatności</legend>
-							
-							<div><label><input type="radio" name="paymentMethod" value="1" checked> Gotówka </label></div>
-							<div><label><input type="radio" name="paymentMethod" value="2"> Karta debetowa </label></div>
-							<div><label><input type="radio" name="paymentMethod" value="3"> Karta kredytowa </label></div>
-							
-						</fieldset>
+						<div class="row">
+							<fieldset>
+								<legend>Sposób płatności</legend>
+								
+								<div><label><input type="radio" name="paymentMethod" value="1" checked> Gotówka </label></div>
+								<div><label><input type="radio" name="paymentMethod" value="2"> Karta debetowa </label></div>
+								<div><label><input type="radio" name="paymentMethod" value="3"> Karta kredytowa </label></div>
+								
+							</fieldset>
+						</div>
 						
-						<fieldset>
-							<legend>Kategoria</legend>
-							
-								<div class="column">
-							
-									<div><label><input type="radio" name="expenseCategory" value="1" checked> Jedzenie </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="2"> Mieszkanie </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="3"> Transport </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="4"> Telekomunikacja </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="5"> Opieka zdrowotna </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="6"> Ubranie </label></div>
+						<div class="row">
+							<fieldset>
+								<legend>Kategoria</legend>
+								
+									<div class="column">
+								
+										<div><label><input type="radio" name="expenseCategory" value="1" checked> Jedzenie </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="2"> Mieszkanie </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="3"> Transport </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="4"> Telekomunikacja </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="5"> Opieka zdrowotna </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="6"> Ubranie </label></div>
+										
+									</div>	
 									
-								</div>	
+									<div class="column">
+									
+										<div><label><input type="radio" name="expenseCategory" value="7"> Higiena </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="8"> Dzieci </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="9"> Rozrywka </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="10"> Wycieczka </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="11"> Szkolenia </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="12"> Książki </label></div>
+									
+									</div>
+									
+									<div class="column">
+									
+										<div><label><input type="radio" name="expenseCategory" value="13"> Oszczędności </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="14"> Na emeryturę </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="15"> Spłata długów </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="16"> Darowizna </label></div>
+										<div><label><input type="radio" name="expenseCategory" value="17"> Inne wydatki </label></div>
 								
-								<div class="column">
-								
-									<div><label><input type="radio" name="expenseCategory" value="7"> Higiena </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="8"> Dzieci </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="9"> Rozrywka </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="10"> Wycieczka </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="11"> Szkolenia </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="12"> Książki </label></div>
-								
-								</div>
-								
-								<div class="column">
-								
-									<div><label><input type="radio" name="expenseCategory" value="13"> Oszczędności </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="14"> Na emeryturę </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="15"> Spłata długów </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="16"> Darowizna </label></div>
-									<div><label><input type="radio" name="expenseCategory" value="17"> Inne wydatki </label></div>
+									</div>
+									
+							</fieldset>	
+						</div>
+						
+						<div class="row">
+							<label for="comment" style="float: left;"> Komentarz (opcjonalnie): </label>
 							
-								</div>
-								
-						</fieldset>						
+							<textarea id="comment" name="comment" rows="4" cols="60" placeholder="Twój komentarz ..."></textarea>
+							<div style="clear: both"></div>
+						</div>	
+						
+						<div class="buttonsRow">
+						
+							<input type="submit" value="Dodaj">
+							<input type="button" value="Anuluj">
+							
+						</div>
 						
 					</form>
 					
@@ -115,7 +136,7 @@
 	</div>
 
 	<footer>
-		<div class="footer">
+		<div class="notFixedFooter">
 			Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
 		</div>
 	</footer>
