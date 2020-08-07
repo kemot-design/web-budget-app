@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>MyBudget Add Expense</title>
+	
+	<meta name="description" content="Kontroluj swoje przychody i wydatki, budżet pod kontrolą" />
+	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	<div class="wrapper">
+	
+		<header>
+			<div class="logo">
+
+				<img src="img/budget.png" style="float: left;" />
+				<span style="color: #85bb65;">My</span>Budget
+				<div style="clear: both;"></div>
+				
+			</div>
+		</header>
+		
+		<nav>
+			<div class="nav">
+				<ol>
+					<li><a href="#">Strona główna</a></li>
+					<li><a href="#">Dodaj przychód</a></li>
+					<li><a href="#">Dodaj wydatek</a></li>
+					<li><a href="#">Przeglądaj bilans</a></li>
+					<li><a href="#">Ustawienia</a></li>
+					<li><a href="#">Wyloguj się</a></li>
+				</ol>
+			</div>
+		</nav>		
+		
+		<main>
+		
+			<article>
+			
+				<div class="formwrapper">
+			
+					<header>
+					
+						<h2> Dodaj przychód </h2>
+					
+					</header>
+				
+					<form action="#" method="POST">
+						
+						<div><label> Kwota: <input type="number" name="expenseValue" step="0.01"></label></div>
+						<div><label> Data: <input type="date" name="expenseDate" step="0.01"></label></div>
+						
+						<fieldset>
+							<legend>Sposób płatności</legend>
+							
+							<div><label><input type="radio" name="paymentMethod" value="1" checked> Gotówka </label></div>
+							<div><label><input type="radio" name="paymentMethod" value="2"> Karta debetowa </label></div>
+							<div><label><input type="radio" name="paymentMethod" value="3"> Karta kredytowa </label></div>
+							
+						</fieldset>
+						
+						<fieldset>
+							<legend>Kategoria</legend>
+							
+								<div class="column">
+							
+									<div><label><input type="radio" name="expenseCategory" value="1" checked> Jedzenie </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="2"> Mieszkanie </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="3"> Transport </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="4"> Telekomunikacja </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="5"> Opieka zdrowotna </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="6"> Ubranie </label></div>
+									
+								</div>	
+								
+								<div class="column">
+								
+									<div><label><input type="radio" name="expenseCategory" value="7"> Higiena </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="8"> Dzieci </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="9"> Rozrywka </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="10"> Wycieczka </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="11"> Szkolenia </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="12"> Książki </label></div>
+								
+								</div>
+								
+								<div class="column">
+								
+									<div><label><input type="radio" name="expenseCategory" value="13"> Oszczędności </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="14"> Na emeryturę </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="15"> Spłata długów </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="16"> Darowizna </label></div>
+									<div><label><input type="radio" name="expenseCategory" value="17"> Inne wydatki </label></div>
+							
+								</div>
+								
+						</fieldset>						
+						
+					</form>
+					
+				</div>
+			
+			</article>
+			
+		</main>
+		
+	</div>
+
+	<footer>
+		<div class="footer">
+			Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
+		</div>
+	</footer>
+		
+</body>
+</html>
