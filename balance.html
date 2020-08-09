@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Balance</title>
+	
+	<meta name="description" content="Kontroluj swoje przychody i wydatki, budżet pod kontrolą" />
+	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	<div class="wrapper">
+	
+		<header>
+			<div class="logo">
+
+				<img src="img/budget.png" style="float: left;" />
+				<span style="color: #85bb65;">My</span>Budget
+				<div style="clear: both;"></div>
+				
+			</div>
+		</header>
+		
+		<nav>
+			<div class="nav">
+				<ol>
+					<li><a href="#">Strona główna</a></li>
+					<li><a href="#">Dodaj przychód</a></li>
+					<li><a href="#">Dodaj wydatek</a></li>
+					<li><a href="#">Przeglądaj bilans</a></li>
+					<li><a href="#">Ustawienia</a></li>
+					<li><a href="#">Wyloguj się</a></li>
+				</ol>
+			</div>
+		</nav>		
+		
+		<main>
+		
+			<article>
+			
+				<div class="content">
+				
+					<div class="balanceHeader">	
+						<header>
+						
+							<h2 class="contentHeader"> Bilans </h2>
+						
+						</header>
+					</div>
+					
+					<div class="balanceHeader">
+					
+						<form>
+						
+							<label for="balanceDate"> Wybierz okres: </label>
+							<select	name="balanceDate" id="balanceDate">
+								<option>Bierzący miesiąc</option>
+								<option>Poprzedni miesiąc</option>
+								<option>Bierzący rok</option>
+								<option>Niestandardowa</option>
+							</select>
+						
+						</form>
+				
+					</div>
+					
+					<div style="clear: both"></div>
+					
+					<div class="row">
+					
+						<div id="incomesTable">
+						
+						
+						</div>
+						
+						<div id="expensesTable">
+						
+						
+						</div>
+					
+					</div>
+					
+					<div class="row">
+						Bilans...
+					</div>
+					
+					<div class="row">
+						Pie charts...
+					</div>
+					
+					
+				</div>
+			
+			</article>
+			
+		</main>
+		
+	</div>
+
+	<footer>
+		<div class="notFixedFooter">
+			Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
+		</div>
+	</footer>
+		
+</body>
+</html>
