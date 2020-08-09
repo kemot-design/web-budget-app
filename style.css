@@ -336,7 +336,7 @@ ol > li:hover
 {
 	text-align: center;
 	font-size: 35px;
-	color: #33cc33;
+	color: #4CAF50;
 }
 
 .formwrapper input[type=number],
@@ -428,4 +428,90 @@ input[type=button]:hover
 	height: 30px;
 	font-size: 15px;
 	margin-left: 10px;
+}
+
+#incomesTable
+{
+	float: left;
+	width: 50%;
+}
+
+#expensesTable
+{
+	float: left;
+	width: 50%;
+}
+
+table
+{
+	border-collapse: collapse;
+	width: 90%;
+	background-color: #202020;
+}
+
+table, td, th
+{
+	border: 1px solid white;
+}
+
+th
+{
+	height: 30px;
+	background-color: #4CAF50;
+	color: #efefef;
+	text-align: center;
+}
+
+th, td
+{
+	padding: 8px;
+}
+
+tr:hover
+{
+	background-color: #353535;
+}
+
+tr td:nth-child(1)
+{
+	width: 60%;
+}
+
+tr th:nth-child(1)
+{
+	width: 60%;
+}
+
+#balanceTable
+{
+	margin-top: 50px;
+}
+
+#balanceRow
+{
+	background-color: #ff1a1a;
+}
+
+#pieChartsRow
+{
+	margin-top: 50px;
+}
+
+#incomesChart
+{
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-image: conic-gradient(pink 70deg, lightblue 0 235deg, orange 0);
+	margin-right: 20px;
+}
+
+#expensesChart
+{
+	display: inline-block;
+	width: 200px;
+	height: 200px;	
+	border-radius: 50%;
+	background-image: conic-gradient(pink 70deg, lightblue 0 235deg, orange 0);
 }
