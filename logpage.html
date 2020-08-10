@@ -8,7 +8,7 @@
 	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
 	
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="mystyle.css" type="text/css" />
 	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
@@ -17,7 +17,7 @@
 <body>
 
 	<div id="topbar">
-		<img src="img/budget.png" style="float: left;"><span style="color: #85bb65;">My</span>Budget
+		<img src="img/budget.png"><span>My</span>Budget
 	</div>
 	
 	<main>
@@ -25,13 +25,24 @@
 		<article>
 		
 			<div id="container">
+				<header>
+					<h1>LOGOWANIE</h1>
+				</header>
 				
-				<h2>LOGOWANIE</h2>
-
 				<form action="#" method="get">
-					<input type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
-					<input type="password" name="userpassword" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
+				
+					<div class="input-container">
+						<i class="icon-user-1 icon"></i>
+						<input class="input-field" type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
+					</div>				
+				
+					<div class="input-container">
+						<i class="icon-lock-1 icon"></i>
+						<input class="input-field" type="password" name="userpassword" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
+					</div>
+					
 					<input type="submit" name="register" value="Zaloguj">
+					
 				</form>
 
 			</div>
@@ -42,7 +53,7 @@
 	
 	<footer>
 	
-		<div class="footer">
+		<div id="footer">
 			Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
 		</div>
 
