@@ -1,0 +1,130 @@
+body{
+	/* Background pattern from Toptal Subtle Patterns */
+	background-image: url("img/dark-honeycomb.png");
+	margin: 0px;
+	padding: 0px;
+	font-size: 18px;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #efefef;
+}
+
+#topbar{
+	background-color: #595959;
+	width: 100%;
+	text-align: left;
+	letter-spacing: 1px;
+	line-height: 50px;
+}
+
+#topbar img{
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin: 5px;
+
+}
+
+#topbar span{
+	color: #99dd65;
+	font-weight: 700;
+}
+
+#footer{
+	background-color: #595959;
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	position: fixed;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+#wrapper{
+	width: 800px;
+	margin: 20px auto;
+	text-align: center;
+	color: #121212;
+}
+
+#introduction{
+	background-color: #dedede;
+	padding: 20px;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);		
+}
+
+p{
+	text-align: justify;
+	line-height: 110%;
+}
+
+h1{
+	font-size: 30px;
+	margin: 0;
+}
+
+#buttonRow{
+	background-color: #dedede;
+	margin-top: 20px;
+	padding: 30px;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);	
+	
+}
+
+#buttonRow a{
+	text-decoration: none;
+	color: #efefef;
+	display: block;
+	height: 40px;
+	width: 300px;
+	font-size: 20px;
+	line-height: 40px;	
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+#buttonRow a:hover{
+	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);	
+}
+
+#registerBtn{
+	display: inline-block;
+	height: 50px;
+	width: 300px;
+	margin-right: 50px;
+
+}
+
+#registerBtn a{
+
+	background-color: #46c768;
+	color: #efefef;
+	font-weight: 700;
+
+}
+
+#loginBtn{
+	display: inline-block;
+	height: 50px;
+	width: 300px;
+	margin-left: 50px;
+
+}
+
+#loginBtn a{
+
+	background-color: #3399ff;
+	color: #efefef;
+	font-weight: 700;
+}
+
+
+
