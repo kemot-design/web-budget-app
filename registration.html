@@ -8,7 +8,7 @@
 	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
 	
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="mystyle.css" type="text/css" />
 	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />	
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
@@ -17,7 +17,7 @@
 <body>
 
 	<div id="topbar">
-		<img src="img/budget.png" style="float: left;"><span style="color: #85bb65;">My</span>Budget
+		<img src="img/budget.png"><span>My</span>Budget
 	</div>
 	
 	<main>
@@ -26,13 +26,34 @@
 		
 			<div id="container">
 				
-				<h2>REJESTRACJA</h2>
-
+				<header>
+					<h1>REJESTRACJA</h1>
+				</header>
+				
 				<form action="#" method="get">
-					<input type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
-					<input type="email" name="useremail" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'">
-					<input type="password" name="userpassword" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
+					
+					<div class="input-container">
+						<i class="icon-user-1 icon"></i>
+						<input class="input-field" type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
+					</div>
+					
+					<div class="input-container">
+						<i class="icon-mail-1 icon"></i>
+						<input class="input-field" type="email" name="useremail" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'">
+					</div>
+
+					<div class="input-container">
+						<i class="icon-lock-1 icon"></i>
+						<input class="input-field" type="password" name="user-password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
+					</div>	
+
+					<div class="input-container">
+						<i class=" icon-lock-open-alt icon"></i>
+						<input class="input-field" type="password" name="confirmation-password" placeholder="confirm password" onfocus="this.placeholder=''" onblur="this.placeholder='confirm password'">
+					</div>	
+					
 					<input type="submit" name="register" value="Zarejestruj">
+				
 				</form>
 
 			</div>
@@ -41,10 +62,9 @@
 		
 	</main>
 	
-	
 	<footer>
 	
-		<div class="footer">
+		<div id="footer">
 					Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
 		</div>
 	
