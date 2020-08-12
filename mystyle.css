@@ -325,3 +325,87 @@ ol > li:hover
 .menu-icon{
 	margin-right: 5px;
 }
+
+/* addincome.html */
+
+#form-wrapper{
+	background-color: #dedede;
+	padding: 20px;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
+	box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);	
+}
+
+.content-header{
+	font-size: 40px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+form{
+	text-align: left;
+}
+
+input[type=number],
+input[type=date]
+{
+	width: 150px;
+	height: 30px;
+}
+
+
+input[type=radio]
+{
+	width: 20px;
+	
+}
+
+.column
+{
+	float: left;
+	width: 33%;
+}
+
+.row
+{
+	margin-top: 20px;
+}
+
+#dateLabel
+{
+	margin-left: 20px;
+}
+
+.buttonsRow
+{
+	text-align: center;
+}
+
+input[type=button]
+{
+	background-color: #ff3300;
+	width: 300px;
+	font-weight: 700;
+	cursor: pointer;
+	font-size: 20px;
+	padding: 15px 10px;
+	border: none;
+	color: white;
+	margin: 0;
+	margin-top: 10px;
+	letter-spacing: 2px;
+	border-radius: 5px;
+}
+
+input[type=button]:hover
+{
+	background-color: #e62e00;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);	
+}
+
+fieldset{
+	background-color: white;
+}
