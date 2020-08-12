@@ -25,6 +25,12 @@ body{
 	text-align: left;
 	letter-spacing: 1px;
 	line-height: 50px;
+	height: 50px;
+}
+
+#topbar a{
+	text-decoration: none;
+	color: #efefef;
 }
 
 #topbar img{
@@ -64,13 +70,6 @@ body{
 	bottom: 0;
 	}
 
-.unfixed-footer{
-	background-color: #595959;
-	width: 100%;
-	text-align: center;
-	line-height: 50px;
-}
-
 #wrapper{
 	width: 800px;
 	margin: 30px auto;
@@ -78,13 +77,22 @@ body{
 	color: #121212;
 }
 
-#introduction{
+.content{
+	width: 760px;
+	margin: 30px auto;
+	text-align: center;
+	color: #121212;	
 	background-color: #dedede;
 	padding: 20px;
 	border-radius: 5px;
 	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
 	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
 	box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);		
+}
+
+.content h2
+{
+	font-size: 40px;
 }
 
 p{
@@ -408,4 +416,101 @@ input[type=button]:hover
 
 fieldset{
 	background-color: white;
+}
+
+/* balance.html */
+
+.balance-date-picker
+{
+	text-align: right;
+
+}
+
+#balance-date
+{
+	height: 25px;
+	font-size: 15px;
+	margin-left: 10px;
+}
+
+.incomes-table
+{
+	float: left;
+	width: 50%;
+}
+
+.expenses-table
+{
+	float: left;
+	width: 50%;
+}
+
+table
+{
+	border-collapse: collapse;
+	width: 90%;
+	font-size: 16px;
+}
+
+table, td, th
+{
+	border: 1px solid black;
+}
+
+th
+{
+	font-size: 20px;
+	background-color: #4CAF50;
+	color: #efefef;
+	text-align: center;
+}
+
+th, td
+{
+	padding: 8px;
+}
+
+tr:hover
+{
+	background-color: #efefef;
+}
+
+tr td:nth-child(1)
+{
+	width: 60%;
+}
+
+tr th:nth-child(1)
+{
+	width: 60%;
+}
+
+.sum-row
+{
+	background-color: #b3b3b3;
+}
+
+.balance-row{
+	font-size: 20px;
+	font-weight: 700;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#incomesChart
+{
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-image: conic-gradient(pink 70deg, lightblue 0 235deg, orange 0);
+	margin-right: 20px;
+}
+
+#expensesChart
+{
+	display: inline-block;
+	width: 200px;
+	height: 200px;	
+	border-radius: 50%;
+	background-image: conic-gradient(pink 70deg, lightblue 0 235deg, orange 0);
 }
