@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	
 	<title>MyBudget Add Expense</title>
 	
@@ -21,14 +21,14 @@
 		<div id="content-wrap">
 	
 			<div id="topbar">
-				<a href="index.html"><div id="small-logo"><img src="img/budget.png"><span>My</span>Budget</div></a>
+				<a href="index.html"><div id="small-logo"><img src="img/budget.png" alt="rocket"><span>My</span>Budget</div></a>
 				<div id="logged-user-name"><span>Zalogowany jako: John Doe</span></div>	
 			</div>	
 			
 			<header>
 				<div class="logo">
 
-					<img src="img/budget.png"/>
+					<img src="img/budget.png" alt="rocket"/>
 					<div style="float: left;">
 						<p><span>My</span>Budget</p>
 						<p> Wzleć na wyżyny swoich <br/> finansowych możliwości! </p>
@@ -54,6 +54,7 @@
 			<main>
 				
 				<div id="wrapper">
+				
 					<article>
 					
 						<div id="form-wrapper">
@@ -69,7 +70,7 @@
 								<div class="row">
 									<label> Kwota: <input type="number" name="expenseValue" id="expenseValue" step="0.01"></label>
 
-									<label id="dateLabel"> Data: <input type="date" name="expenseDate" step="0.01"></label>
+									<label id="dateLabel"> Data: <input type="date" name="expenseDate" ></label>
 								</div>
 								
 								<div class="row">
@@ -123,15 +124,16 @@
 								</div>
 								
 								<div class="row">
-									<label for="comment"> Komentarz (opcjonalnie): </label></br>
-									
+								
+									<label for="comment"> Komentarz (opcjonalnie): </label><br>
 									<textarea id="comment" name="comment" rows="4" cols="60" placeholder="Twój komentarz ..."></textarea>
+									
 								</div>	
 								
 								<div class="buttonsRow">
 								
 									<input type="submit" value="Dodaj">
-									<a href="mainmenu.html"><input type="button" value="Anuluj"></a>
+									<a href="mainmenu.html"><div class="anuluj-btn">Anuluj</div></a>
 									
 								</div>
 								
