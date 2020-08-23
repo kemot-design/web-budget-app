@@ -8,60 +8,38 @@ body{
 	color: #efefef;	
 }
 
-#page-container {
+.page-container {
 	position: relative;
 	min-height: 100vh;
 }
 
-#content-wrap{
+.content-wrap{
 	padding-bottom: 50px;
 }
 
 /* index.html */
 
-#topbar{
+.topbar{
 	background-color: #595959;
-	width: 100%;
-	text-align: left;
 	letter-spacing: 1px;
-	line-height: 50px;
-	height: 50px;
 }
 
-#topbar a{
-	text-decoration: none;
+.topbar a{
 	color: #efefef;
 }
 
-#topbar img{
+.topbar img{
 	height: 40px;
 	width: 40px;
-	float: left;
-	margin: 5px;
 }
 
-#topbar span{
+.topbar span{
 	color: #46c768;
 	font-weight: 700;
 }
 
-#small-logo{
-	float: left;
-}
-
-#logged-user-name{
-	width: 100%;
-	font-size: 15px;
-	text-align: right;
-}
-
-#logged-user-name span{
-	margin-right: 20px;
-	color: #efefef;
-}
-
-#footer{
-	background-color: #595959;
+.footer{
+	background-color: #353535;
 	width: 100%;
 	height: 50px;
 	text-align: center;
@@ -78,12 +56,9 @@ body{
 }
 
 .content{
-	width: 760px;
-	margin: 30px auto;
 	text-align: center;
 	color: #121212;	
 	background-color: #dedede;
-	padding: 20px;
 	border-radius: 5px;
 	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
 	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
@@ -93,6 +68,7 @@ body{
 .content h2
 {
 	font-size: 40px;
+    font-weight: 700;
 }
 
 p{
@@ -220,7 +196,7 @@ h1{
 	box-shadow: 0px 0px 10px 2px rgba(159,185,194,0.9);	
 }
 
-input[type=submit]
+/*input[type=submit]
 {
 	background-color: #46c768;
 	width: 300px;
@@ -234,7 +210,7 @@ input[type=submit]
 	margin-top: 10px;
 	letter-spacing: 2px;
 	border-radius: 5px;
-}
+}*/
 
 input[type=submit]:hover
 {
@@ -278,56 +254,39 @@ input[type=submit]:hover
 	font-size: 15px;
 }
 
-.nav
+nav{
+    min-height: 59px;
+}
+
+.custom-toggler.navbar-toggler{ 
+    border-color: black; 
+}
+
+.custom-toggler .navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+}
+
+nav button{
+    background-color: lawngreen;
+}
+
+nav button:hover{
+    background-color: green;
+}
+
+nav a{
+    color: #232223;
+}
+
+ul > li:hover > a
 {
-	width: 100%;
+	color: #000;
+}
+
+ul > li:hover
+{
 	background-color: #46c768;
-	padding: 10px 0px;
-	text-align: center;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-
-}
-
-ol
-{
-	display: inline-block;
-	padding: 0px;
-	margin: 0px;
-	list-style-type: none;
-	font-size: 17px;
-	height: 35px;
-	line-height: 35px;
-}
-
-ol > li
-{
-	float: left;
-	width: 170px;
-	height: 40px;
-	border-right: 1px dashed black;
-}
-
-ol > li:first-child
-{
-	border-left: 1px dashed black;
-}
-
-ol a
-{
-	text-decoration: none;
-	color: #ffffff;
-	display: block;
-}
-
-ol > li:hover > a
-{
-	color: #451717;
-}
-
-ol > li:hover
-{
-	background-color: #57d879;
+    border-radius: 5px;
 }
 
 .menu-icon{
@@ -336,23 +295,14 @@ ol > li:hover
 
 /* addincome.html */
 
-#form-wrapper{
-	background-color: #dedede;
-	padding: 20px;
-	border-radius: 5px;
-	-webkit-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
-	-moz-box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);
-	box-shadow: 1px 1px 15px 1px rgba(159,185,194,0.9);	
-}
-
 .content-header{
 	font-size: 40px;
-	margin-bottom: 30px;
-	margin-top: 10px;
+	padding: 25px 0;
 }
 
 form{
 	text-align: left;
+    font-size: 16px;
 }
 
 input[type=number],
@@ -360,6 +310,7 @@ input[type=date]
 {
 	width: 150px;
 	height: 30px;
+    font-size: 16px;
 }
 
 
@@ -375,75 +326,6 @@ input[type=radio]
 	width: 33%;
 }
 
-.row
-{
-	margin-top: 20px;
-}
-
-#dateLabel
-{
-	margin-left: 20px;
-}
-
-.buttonsRow
-{
-	text-align: center;
-}
-
-.anuluj-btn{
-	display: inline-block;
-	background-color: #ff3300;
-	width: 300px;
-	font-weight: 700;
-	cursor: pointer;
-	font-size: 20px;
-	padding: 15px 10px;
-	border: none;
-	color: white;
-	margin: 0;
-	margin-top: 10px;
-	letter-spacing: 2px;
-	border-radius: 5px;	
-}
-
-.anuluj-btn:hover{
-	background-color: #e62e00;
-	-webkit-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
-	-moz-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
-	box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);	
-}
-
-.anuluj-btn a{
-	text-decoration: none;
-}
-
-input[type=button]
-{
-	background-color: #ff3300;
-	width: 300px;
-	font-weight: 700;
-	cursor: pointer;
-	font-size: 20px;
-	padding: 15px 10px;
-	border: none;
-	color: white;
-	margin: 0;
-	margin-top: 10px;
-	letter-spacing: 2px;
-	border-radius: 5px;
-}
-
-input[type=button]:hover
-{
-	background-color: #e62e00;
-	-webkit-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
-	-moz-box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);
-	box-shadow: 0px 0px 15px 5px rgba(159,185,194,0.9);	
-}
-
-fieldset{
-	background-color: white;
-}
 
 /* balance.html */
 
@@ -524,3 +406,21 @@ tr th:nth-child(1)
 	margin-bottom: 20px;
 }
 
+.formLegend{
+    font-size: 21px;
+    color: darkgreen;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+hr{
+    border: 1px solid lightgrey;
+    margin-bottom: 0;
+}
+
+.btn-block {
+    font-size: 22px;
+    padding: 15px 0; 
+    /* define values in pixels / Percentage or em. whatever suits 
+       your requirements */
+}
