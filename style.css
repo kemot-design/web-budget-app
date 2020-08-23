@@ -165,10 +165,7 @@ input[type=submit]:focus
 
 .content{
 	text-align: justify;
-	padding-top: 10px;
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
+
 }
 
 ol

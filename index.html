@@ -3,34 +3,46 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<title>MyBudget</title>
 	
 	<meta name="description" content="Kontroluj swoje przychody i wydatki, budżet pod kontrolą" />
 	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
 	
-	<link rel="stylesheet" href="mystyle.css" type="text/css" />
-	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />	
 	
 </head>
 
 <body>
 
-	<div id="topbar">
-		<a href="index.html"><div id="small-logo"><img src="img/budget.png" alt="rocket"><span>My</span>Budget</div></a>
-	</div>
+	<header>
+                
+        <div class="topbar">
+            
+            <nav class="navbar navbar-expand-sm py-0">
+                
+                <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+                
+            </nav>
+            
+        </div>	
+    
+    </header>	
 	
-	<div id="wrapper">
-	
-		<main>
-		
-			<div class="content">
+    <main>
+    
+    	<div class="container">
+
+			<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 my-4 pb-2 content">
 		
 				<section>
 				
 					<header>
-						<h1> Dlaczego warto prowadzić budżet? </h1>
+						<h2 class="content-header"> Dlaczego warto prowadzić budżet? </h2>
 					</header>					
 
 					<blockquote>
@@ -49,33 +61,41 @@
 				
 			</div>
 			
-			<section>
-				
-				<div id="buttonRow">
-				
-					<div id="registerBtn">
-						Nie masz jeszcze konta?
-						<a href="registration.html"><i class="icon-user-add-outline"></i> Zarejestruj się! </a>
-					</div>
-					
-					<div id="loginBtn">
-						Masz już konto?
-						<a href="logpage.html"><i class="icon-login-1"></i> Zaloguj się! </a>
-					</div>
-				
-				</div>
-				
-			</section>	
-			
-		</main>
-	
-	</div>
+            <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 my-4 content">
+            
+                <section>
 
+                    <div class="row pb-3">
+
+                        <div class="col-md-6">
+                            <p class="text-center mb-1 mt-3">Pierwszy raz tutaj?</p>
+                           <a href="registration.html" class="btn btn-success btn-block">Zarejestruj się</a>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <p class="text-center mb-1 mt-3">Masz już konto?</p>
+                           <a href="logpage.html" class="btn btn-primary btn-block">Logowanie</a>
+                        </div>
+
+                    </div>
+
+                </section>	
+			
+            </div>
+	
+	   </div>
+
+    </main>    
+        
 	<footer>
 	
-		<div id="footer"> Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020 </div>
+		<div class="footer position-absolute"> Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020 </div>
 	
 	</footer>	
 		
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	
-	<title>MyBudget - Home Page</title>
+	<title>MyBudget Add Expense</title>
 	
 	<meta name="description" content="Kontroluj swoje przychody i wydatki, budżet pod kontrolą" />
 	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
@@ -13,15 +13,15 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="mystyle.css" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />
-	
+	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />	
 	
 </head>
 
 <body>
+
 	<div class="page-container">	
 		<div class="content-wrap">
-		
+	
             <header>
                 
                 <div class="topbar">
@@ -63,39 +63,79 @@
                     
 				</nav>
                 
-            </header>    
-            
+            </header>
+		
 			<main>
-                
+				
 				<div class="container">
 				
-                    <div class="col-xl-8 offset-xl-2 my-3 content">
-			
+                    <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-3 content">
                         <article>
-                            
+
                             <header>
-                                    <h2 class="content-header">Witaj w MyBudget!</h2>
-                                </header>
 
-                            <div class="row p-3">
+                                <h2 class="content-header"><i class="icon-money-1"></i> Dodaj przychód </h2>
+                              
+                            </header>
 
-                                <p>Najważniejszą rzeczą w prowadzeniu budżetu jest zaplanowanie tego na co wydajemy własne ciężko zarobione pieniądze. Wiadomo, że każdy człowiek jest inny, ma inne potrzeby i priorytety, jednak w comiesięcznym budżecie statystycznego gospodarstwa domowego są pozycje, które występują zawsze - utrzymanie domu/mieszkania, jedzenie, transport i wiele innych. I teraz, żeby planować wydatki, które będą mniej więcej pokrywać się kwotowo z rzeczywistością, musimy wpierw zdać sobię sprawę na co i ile wydajemy - a proszę mi wierzyć, możemy się nieźle zdziwić. Przydatnym narzędziem będzie tutaj spisywanie wydatków. Jeśli poświęcimy temu zajęciu trochę czasu możemy uświadomić sobie gdzie przeciekają nasze pieniądze, ile miesięcznie tracimy na głupoty, a ile moglibyśmy odłożyć na wymarzony dom, inwestycje czy wakacje. </p>
-                                <p>Po pewnym okresie warto zajrzeć do opcji Przeglądaj Bilans, gdzie zgromadzone będą wszystkie informacje na temat wpływów i wydatków, z podziałem na kategorie, zobaczysz wtedy czy z miesiąca na misiąc stajesz się bogatszy czy może wręcz przeciwnie i czas na zmiany.</p>
-                                <p>W ustawieniach można edytować domyślne nazwy kategorii wydatków i przychodów. </p>
-                                <p> Zapraszam do korzystania z aplikacji.</p>
+                            <form action="#" method="POST">
 
-                            </div>    
+                                <div class="row">
+
+                                    <label class="formLegend ml-3"> Kwota: <input type="number" name="expenseValue" id="expenseValue" step="0.01"></label>
+
+                                    <label class="formLegend ml-3"> Data: <input type="date" name="expenseDate" class="ml-2"></label>
+                                
+                                </div>	
+
+                                <hr>
+                                
+                                <h3 class="formLegend">Kategoria</h3>
+
+                                <div class="row mt-1">
+                                    <div class="col-md-12">
+
+                                        <div><label><input type="radio" name="paymentMethod" value="1" checked> Wynagrodzenie </label></div>
+                                        <div><label><input type="radio" name="paymentMethod" value="2"> Odsetki </label></div>
+                                        <div><label><input type="radio" name="paymentMethod" value="3"> Sprzedaż na allegro </label></div>
+                                        <div><label><input type="radio" name="paymentMethod" value="3"> Inne </label></div>
+
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <label for="comment" class="formLegend"> Komentarz (opcjonalnie): </label><br>
+                                        <textarea id="comment" name="comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
+                                    </div>
+                                </div>	
+
+                                <div class="row py-3">
+
+                                    <div class="col-md-6 my-1">
+                                       <input type="submit" class="btn btn-success btn-block" value="Dodaj">
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                       <a href="mainmenu.html" class="btn btn-danger btn-block">Anuluj</a>
+                                    </div>
+
+                                </div>
+
+                            </form>
 
                         </article>
-					
+                    
                     </div>    
                         
 				</div>
-				
+                
 			</main>
-            
-		</div>	
 		
+		</div>
+
 		<footer>
 			<div class="footer position-absolute">
 				Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
