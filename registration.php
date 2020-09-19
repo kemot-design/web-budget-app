@@ -1,3 +1,54 @@
+<?PHP
+
+    session_start();
+
+    if(isset($_POST['userlogin'])){
+    
+        $allValid = true;
+        
+        //login validate
+        $login = $_POST['userlogin'];
+        
+        if(strlen($login) < 3 || strlen($login) > 20){
+            $_SESSION['er_login'] = '<div class="error"> Login musi składać się z od 3 do 20 znaków </div>';
+            $allValid = false;
+        }
+        
+        if(ctype_alnum($login) == false){
+            $_SESSION['er_login'] = '<div class="error"> Login może sładać się wyłącznie z liter i liczb </div>';
+            $allValid = false;
+        }
+        
+        //email validate
+        $email = $_POST['useremail'];
+		$emailSanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
+		
+		if ((filter_var($emailSanitized, FILTER_VALIDATE_EMAIL) == false) || ($emailSanitized != $email))
+		{
+			$allValid = false;
+			$_SESSION['er_email']="Podaj poprawny adres e-mail!";
+		}
+        
+        //password validation
+        $password = $_POST['user-password'];
+        
+        if(strlen($password) < 8 || strlen($password) > 20){
+            $allValid = false;
+            $_SESSION['er_pass'] = "Hasło musi mieć od 8 do 20 znaków!";
+        }
+        
+        $passwordConfirmation = $_POST['confirmation-password'];
+        if($password != $passwordConfirmation){
+            $allValid = false;
+            $_SESSION['er_pass'] = "Podane hasła nie są identyczne";
+        }
+        
+        
+        
+    }
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -16,6 +67,7 @@
     <link rel="stylesheet" href="mystyle.css" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css" />	
+
 
 </head>
 
@@ -49,22 +101,44 @@
                             <h1 class="content-header">REJESTRACJA</h1>
                         </header>
 
-                        <form action="#" method="get">
+                        <form action="#" method="post">
 
                             <div class="input-container">
                                 <i class="icon-user-1 icon"></i>
                                 <input class="input-field" type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
                             </div>
-
+                            
+                            <?PHP
+                                if(isset($_SESSION['er_login'])){
+                                    echo $_SESSION['er_login'];
+                                    unset ($_SESSION['er_login']);
+                                }
+                            ?>
+                                
                             <div class="input-container">
                                 <i class="icon-mail-1 icon"></i>
-                                <input class="input-field" type="email" name="useremail" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'">
+                                <input class="input-field" type="text" name="useremail" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'">
                             </div>
+                            
+                            <?PHP
+                                if(isset($_SESSION['er_email'])){
+                                    echo '<div class="error">'.$_SESSION['er_email'].'</div>';
+                                    unset($_SESSION['er_email']);
+                                }
+                            
+                            ?>
 
                             <div class="input-container">
                                 <i class="icon-lock-1 icon"></i>
                                 <input class="input-field" type="password" name="user-password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
                             </div>	
+                            <?PHP
+                                if(isset($_SESSION['er_pass'])){
+                                    echo '<div class="error">'.$_SESSION['er_pass'].'</div>';
+                                    unset($_SESSION['er_pass']);
+                                }
+                            
+                            ?>
 
                             <div class="input-container">
                                 <i class=" icon-lock-open-alt icon"></i>
