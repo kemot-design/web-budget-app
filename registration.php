@@ -10,7 +10,7 @@
         $login = $_POST['userlogin'];
         
         if(strlen($login) < 3 || strlen($login) > 20){
-            $_SESSION['er_login'] = '<div class="error"> Login musi składać się z od 3 do 20 znaków </div>';
+            $_SESSION['er_login'] = 'Login musi składać się z od 3 do 20 znaków';
             $allValid = false;
         }
         
@@ -43,7 +43,76 @@
             $_SESSION['er_pass'] = "Podane hasła nie są identyczne";
         }
         
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
+        //connect to data base and check if  login and email is unique
+        
+        try{
+        
+            require_once "connect.php";
+            mysqli_report(MYSQLI_REPORT_STRICT);
+            
+            $dbConnection = new mysqli($host, $db_user, $db_password, $db_name);
+            
+            if($dbConnection->connect_errno != 0){
+                throw new Exception(mysqli_connect_errno());
+            }
+            else{
+                
+                //connection is ok so check login and email uniqueness
+                //login uniqueness
+                $queryResult = $dbConnection->query("SELECT id FROM users WHERE username = '$login'");
+                
+                if($queryResult == false){
+                    throw new Exception($dbConnection->error);
+                }
+                else{
+                    $recordsNum = $queryResult->num_rows;
+                    
+                    if($recordsNum > 0){
+                        $allValid = false;
+                        $_SESSION['er_login'] = "Istnieje już użytkownik o takiej nazwie!";
+                    }
+                    
+                }
+                
+                //email uniqueness
+                $queryResult = $dbConnection->query("SELECT id FROM users WHERE email = '$email'");
+                
+                if($queryResult == false){
+                    throw new Exception($dbConnection->error);
+                }
+                else{
+                    $recordNum = $queryResult->num_rows;
+                    
+                    if($recordNum > 0){
+                        $allValid = false;
+                        $_SESSION['er_email'] = "Podany adres email istnieje już w serwisie";
+                    }
+                    
+                }
+                
+                //we add new user if allValid is true
+                if($allValid){
+                    if($dbConnection->query("INSERT INTO users VALUES(NULL,'$login','$passwordHash','$email')")){
+                        $_SESSION['registrationSuccess'] = true;
+                        echo "Rejestracja pomyślna";
+                        header('Location: logpage.html');
+                    }
+                    else{
+                        throw new Exception($dbConnection->error);
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        catch(Exception $e){
+            echo "Błąd połączenia z serwerem, prosze o rejestracja w innym terminie. <br/> Przepraszamy za utrudnienia.<br/><br/>";
+            echo "Info o błędie: <br/>".$e;
+        }
         
     }
  
@@ -110,7 +179,7 @@
                             
                             <?PHP
                                 if(isset($_SESSION['er_login'])){
-                                    echo $_SESSION['er_login'];
+                                    echo '<div class="error">'.$_SESSION['er_login'].'</div>';
                                     unset ($_SESSION['er_login']);
                                 }
                             ?>
