@@ -45,12 +45,11 @@
         
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
-        //connect to data base and check if  login and email is unique
+        //connect to data base and check if  login and email is unique      
+        require_once "connect.php";
+        mysqli_report(MYSQLI_REPORT_STRICT);
         
         try{
-        
-            require_once "connect.php";
-            mysqli_report(MYSQLI_REPORT_STRICT);
             
             $dbConnection = new mysqli($host, $db_user, $db_password, $db_name);
             
@@ -97,7 +96,7 @@
                     if($dbConnection->query("INSERT INTO users VALUES(NULL,'$login','$passwordHash','$email')")){
                         $_SESSION['registrationSuccess'] = true;
                         echo "Rejestracja pomyślna";
-                        header('Location: logpage.html');
+                        header('Location: welcome.php');
                     }
                     else{
                         throw new Exception($dbConnection->error);

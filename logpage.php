@@ -1,3 +1,16 @@
+<?PHP
+
+    session_start();
+
+    if(isset($_SESSION['login_success'])){
+        header('Location: mainmenu.php');
+        exit();
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -49,12 +62,19 @@
                             <h1 class="content-header">LOGOWANIE</h1>
                         </header>
 
-                        <form action="#" method="get">
+                        <form action="loggin.php" method="POST">
 
                             <div class="input-container">
                                 <i class="icon-user-1 icon"></i>
                                 <input class="input-field" type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
-                            </div>				
+                            </div>		
+                            <?PHP
+                            
+                                if(isset($_SESSION['error_login'])){
+                                    echo '<div class="error">'.$_SESSION['error_login'].'</div>';
+                                }
+                            
+                            ?>
 
                             <div class="input-container">
                                 <i class="icon-lock-1 icon"></i>

@@ -1,3 +1,21 @@
+<?PHP
+
+    session_start();
+
+    if(isset($_SESSION['registrationSuccess']) == false){
+        header('Location: index.php');
+        exit();
+    }
+    else{
+        unset($_SESSION['registrationSuccess']);
+    }
+
+    if(isset($_SESSION['er_login'])) unset($_SESSION['er_login']);
+    if(isset($_SESSION['er_pass'])) unset($_SESSION['er_pass']);
+    if(isset($_SESSION['er_email'])) unset($_SESSION['er_email']);
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -42,21 +60,13 @@
 				<section>
 				
 					<header>
-						<h2 class="content-header"> Dlaczego warto prowadzić budżet? </h2>
-					</header>					
-
-					<blockquote>
-						<q>Zrobić budżet to wskazać swoim pieniądzom, dokąd mają iść, zamiast zastanawiać się, gdzie się rozeszły</q>
-					</blockquote> 
+						<h2 class="content-header"> Rejestracja zakończona pomyślnie! </h2>
+					</header>					 
 					
-					<p>	
-						Te słowa John'a C. Maxwell'a, jednego z największych autoryterów w dziedzinie przywódctwa, bardzo dobrze oddają ideę stojącą za tworzeniem budżetu. Uważamy, że budżet to plan dla naszych pieniędzy, plan który pozwala zapanować nad tym potężnym narzędziem i sprawić aby to pieniądze pracowały dla nas, a nie my dla pieniędzy.
+					<p style="text-align: center">	
+						Teraz możesz zalogowac się do swojego konta
 					</p>
 					
-					<p>
-						Dlatego zachęcam Cię do dołączenia do grona naszych użytkowników i sprawdzenia jak nasze narzędzia mogą odmienić <strong> Twoje </strong>życie!
-					
-					</p>					
 				</section>
 				
 			</div>
@@ -67,16 +77,11 @@
 
                     <div class="row pb-3">
 
-                        <div class="col-md-6">
-                            <p class="text-center mb-1 mt-3">Pierwszy raz tutaj?</p>
-                           <a href="http://localhost/web-budget-app/registration.php" class="btn btn-success btn-block">Zarejestruj się</a>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <p class="text-center mb-1 mt-3">Masz już konto?</p>
+                        <div class="col-md-6 offset-md-3">
+                            <p class="text-center mb-1 mt-3">Zaloguj się na swoje konto</p>
                            <a href="http://localhost/web-budget-app/logpage.php" class="btn btn-primary btn-block">Logowanie</a>
                         </div>
-
+ 
                     </div>
 
                 </section>	

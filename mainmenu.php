@@ -1,3 +1,15 @@
+<?PHP
+
+    session_start();
+    
+    if(isset($_SESSION['login_success']) == false){
+        header('Location: index.html');
+        exit();
+    }
+
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -28,7 +40,7 @@
                     <nav class="navbar navbar-expand-sm py-0">
                         <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                         <ul class="navbar-nav ml-auto">
-                            <li class="navbar-item">Zalogowany jako: <span>John Doe</span></li>
+                            <li class="navbar-item">Zalogowany jako: <span> <?PHP echo $_SESSION['user_name']; ?> </span></li>
                         </ul>
                     </nav>
                 </div>	
@@ -74,7 +86,9 @@
                         <article>
                             
                             <header>
-                                    <h2 class="content-header">Witaj w MyBudget!</h2>
+                                    <h2 class="content-header">Witaj 
+                                        <?PHP echo "tekst";  ?> 
+                                    </h2>
                                 </header>
 
                             <div class="row p-3">
