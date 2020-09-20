@@ -38,9 +38,9 @@
                 
                 <div class="topbar">
                     <nav class="navbar navbar-expand-sm py-0">
-                        <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+                        <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                         <ul class="navbar-nav ml-auto">
-                            <li class="navbar-item">Zalogowany jako: <span> <?PHP echo $_SESSION['user_name']; ?> </span></li>
+                            <li class="navbar-item">Zalogowany jako: <span> <?= $_SESSION['user_name'] ?> </span></li>
                         </ul>
                     </nav>
                 </div>	
@@ -63,12 +63,12 @@
 					<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                         
 						<ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="mainmenu.html"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mainmenu.php"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
                             <li class="nav-item"><a class="nav-link" href="addincome.html"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
                             <li class="nav-item"><a class="nav-link" href="addexpense.html"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
                             <li class="nav-item"><a class="nav-link" href="balance.html"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
                             <li class="nav-item"><a class="nav-link" href="#"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
-                            <li class="nav-item"><a class="nav-link" href="logpage.html"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
+                            <li class="nav-item"><a class="nav-link" href="logout.php"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
 						</ul>
                         
 					</div>
@@ -86,10 +86,8 @@
                         <article>
                             
                             <header>
-                                    <h2 class="content-header">Witaj 
-                                        <?PHP echo "tekst";  ?> 
-                                    </h2>
-                                </header>
+                                <h2 class="content-header">Witaj <?= $_SESSION['user_name'] ?> </h2>
+                            </header>
 
                             <div class="row p-3">
 

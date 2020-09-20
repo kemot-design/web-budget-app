@@ -88,14 +88,40 @@
                         $allValid = false;
                         $_SESSION['er_email'] = "Podany adres email istnieje już w serwisie";
                     }
-                    
                 }
                 
                 //we add new user if allValid is true
                 if($allValid){
                     if($dbConnection->query("INSERT INTO users VALUES(NULL,'$login','$passwordHash','$email')")){
                         $_SESSION['registrationSuccess'] = true;
-                        echo "Rejestracja pomyślna";
+                        
+                        //we copy default income, expense and payment methods categories from default tables to users assigned tables
+                        $queryResult = $dbConnection->query("SELECT id FROM users WHERE email = '$email'");
+                        
+                        if($queryResult == false){
+                            throw new Exception($dbConnection->error);
+                        }
+                        else{
+                            $resultRow = $queryResult->fetch_assoc();
+                            $new_user_id = $resultRow['id'];
+                            
+                            if(!$dbConnection->query("INSERT INTO expenses_category_assigned_to_users (user_id, name)
+                            SELECT $new_user_id, name FROM expenses_category_default")){                            
+                                throw new Exception($dbConnection->error);
+                            }  
+                            
+                            if(!$dbConnection->query("INSERT INTO incomes_category_assigned_to_users (user_id, name)
+                            SELECT $new_user_id, name FROM incomes_category_default")){
+                                throw new Exception($dbConnection->error);
+                            }
+                            
+                            if(!$dbConnection->query("INSERT INTO payment_methods_assigned_to_users (user_id, name)
+                            SELECT $new_user_id, name FROM payment_methods_default")){
+                                throw new Exception($dbConnection->error);
+                            }
+                            
+                        }
+                        
                         header('Location: welcome.php');
                     }
                     else{

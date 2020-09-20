@@ -1,3 +1,13 @@
+<?PHP
+    
+    session_start();
+
+    if(isset($_SESSION['login_success'])){
+        header('Location: mainmenu.php');
+    }
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -25,7 +35,7 @@
             
             <nav class="navbar navbar-expand-sm py-0">
                 
-                <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+                <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                 
             </nav>
             

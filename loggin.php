@@ -22,7 +22,7 @@
 
             $login = htmlentities($login, ENT_QUOTES, "UTF-8");
             
-            if($queryResult = $dbConnection->query(sprintf("SELECT id, password FROM users WHERE username = '%s'", mysqli_real_escape_string($dbConnection, $login)))){
+            if($queryResult = $dbConnection->query(sprintf("SELECT * FROM users WHERE username = '%s'", mysqli_real_escape_string($dbConnection, $login)))){
                 
                  $recordsNum = $queryResult->num_rows;
                 
@@ -32,7 +32,7 @@
                     
                     if(password_verify($password, $dataRow['password'])){
                         $_SESSION['login_success'] = true;
-                        $_SESSION['user_id'] = $dataRow['id'];
+                        $_SESSION['user_id'] = $dataRow['id'];                      
                         $_SESSION['user_name'] = $dataRow['username'];
                         $_SESSION['user_email'] = $dataRow['email'];
                         
