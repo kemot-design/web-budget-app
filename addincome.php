@@ -1,3 +1,16 @@
+<?PHP
+
+    session_start();
+
+    if((!isset($_SESSION['login_success'])) || ($_SESSION['login_success'] != true)){
+        header('Location: logpage.php');
+        exit();
+    }
+   
+
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -26,7 +39,7 @@
                 
                 <div class="topbar">
                     <nav class="navbar navbar-expand-sm py-0">
-                        <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+                        <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                         <ul class="navbar-nav ml-auto">
                             <li class="navbar-item">Zalogowany jako: <span>John Doe</span></li>
                         </ul>
@@ -51,12 +64,12 @@
 					<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                         
 						<ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="mainmenu.html"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
-                            <li class="nav-item"><a class="nav-link" href="addincome.html"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
-                            <li class="nav-item"><a class="nav-link" href="addexpense.html"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
-                            <li class="nav-item"><a class="nav-link" href="balance.html"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mainmenu.php"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
+                            <li class="nav-item"><a class="nav-link" href="addincome.php"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
+                            <li class="nav-item"><a class="nav-link" href="addexpense.php"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
+                            <li class="nav-item"><a class="nav-link" href="balance.php"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
                             <li class="nav-item"><a class="nav-link" href="#"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
-                            <li class="nav-item"><a class="nav-link" href="logpage.html"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
+                            <li class="nav-item"><a class="nav-link" href="logpage.php"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
 						</ul>
                         
 					</div>
@@ -78,13 +91,13 @@
                               
                             </header>
 
-                            <form action="#" method="POST">
+                            <form action="add_new_income.php" method="POST">
 
                                 <div class="row">
 
-                                    <label class="formLegend ml-3"> Kwota: <input type="number" name="expenseValue" id="expenseValue" step="0.01"></label>
+                                    <label class="formLegend ml-3"> Kwota: <input type="number" name="income_value" id="expenseValue" step="0.01"></label>
 
-                                    <label class="formLegend ml-3"> Data: <input type="date" name="expenseDate" class="ml-2"></label>
+                                    <label class="formLegend ml-3"> Data: <input type="date" name="income_date" class="ml-2"></label>
                                 
                                 </div>	
 
@@ -95,10 +108,16 @@
                                 <div class="row mt-1">
                                     <div class="col-md-12">
 
-                                        <div><label><input type="radio" name="paymentMethod" value="1" checked> Wynagrodzenie </label></div>
-                                        <div><label><input type="radio" name="paymentMethod" value="2"> Odsetki </label></div>
-                                        <div><label><input type="radio" name="paymentMethod" value="3"> Sprzedaż na allegro </label></div>
-                                        <div><label><input type="radio" name="paymentMethod" value="3"> Inne </label></div>
+                                        <?PHP
+                                        
+                                            $income_categories = $_SESSION['income_categories'];
+                                        
+                                            foreach($income_categories as $income_category){
+                                               echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'">'.$income_category['name'].'<label></div>';
+                                            }
+                                            
+                                        
+                                        ?>
 
                                     </div>
                                 </div>
@@ -109,7 +128,7 @@
 
                                     <div class="col-md-6">
                                         <label for="comment" class="formLegend"> Komentarz (opcjonalnie): </label><br>
-                                        <textarea id="comment" name="comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
+                                        <textarea id="comment" name="income_comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
                                     </div>
                                 </div>	
 

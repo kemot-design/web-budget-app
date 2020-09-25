@@ -3,7 +3,7 @@
     session_start();
     
     if(isset($_SESSION['login_success']) == false){
-        header('Location: index.html');
+        header('Location: index.php');
         exit();
     }
 
@@ -64,9 +64,9 @@
                         
 						<ul class="navbar-nav">
                             <li class="nav-item"><a class="nav-link" href="mainmenu.php"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
-                            <li class="nav-item"><a class="nav-link" href="addincome.html"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
-                            <li class="nav-item"><a class="nav-link" href="addexpense.html"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
-                            <li class="nav-item"><a class="nav-link" href="balance.html"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
+                            <li class="nav-item"><a class="nav-link" href="addincome.php"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
+                            <li class="nav-item"><a class="nav-link" href="addexpense.php"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
+                            <li class="nav-item"><a class="nav-link" href="balance.php"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
                             <li class="nav-item"><a class="nav-link" href="#"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
                             <li class="nav-item"><a class="nav-link" href="logout.php"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
 						</ul>
