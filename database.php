@@ -9,7 +9,8 @@ try {
 		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 	]);
 	
-} catch (PDOException $error) {
+} 
+catch (PDOException $error) {
 	
 	echo $error->getMessage();
 	exit('Database error');

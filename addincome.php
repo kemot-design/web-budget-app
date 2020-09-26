@@ -11,17 +11,20 @@
     require_once 'database.php';
 
   //we copy user income categories into an array
-    if($queryResult = $db->query("SELECT id, name FROM incomes_category_assigned_to_users WHERE user_id = '{$_SESSION['user_id']}'")){
+    try{
+        if($queryResult = $db->query("SELECT id, name FROM incomes_category_assigned_to_users WHERE user_id = '{$_SESSION['user_id']}'")){
 
-        while($dataRow = $queryResult->fetch(PDO::FETCH_ASSOC)){
-            $income_categories[] = $dataRow;
+            while($dataRow = $queryResult->fetch(PDO::FETCH_ASSOC)){
+                $income_categories[] = $dataRow;
+            }
+
+            $queryResult = NULL;
+            $db = NULL;
         }
-        
-        $queryResult = NULL;
-        $db = NULL;
     }
-    else{
-        throw new Exception($dbConnection->error);
+    catch(PDOException $e){
+        echo "Błąd dodania przychodu <br/>";
+        echo "Info: ".$e->message."<br/>";
     }
 
     if(isset($_SESSION['income_added'])){
@@ -90,8 +93,8 @@
                             <li class="nav-item"><a class="nav-link" href="addincome.php"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
                             <li class="nav-item"><a class="nav-link" href="addexpense.php"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
                             <li class="nav-item"><a class="nav-link" href="balance.php"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
-                            <li class="nav-item"><a class="nav-link" href="logpage.php"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
+                            <li class="nav-item"><a class="nav-link" href="settings.php"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
+                            <li class="nav-item"><a class="nav-link" href="logout.php"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
 						</ul>
                         
 					</div>
@@ -131,9 +134,7 @@
                                     <div class="col-md-12">
 
                                         <?PHP
-                                        
-                                            $counter = 0;
-                                        
+                                                                                
                                             foreach($income_categories as $income_category){
                                                 if($income_category === reset($income_categories)){     
                                                     echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'" checked>'.$income_category['name'].'<label></div>';
@@ -142,7 +143,6 @@
                                                 else{
                                                     echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'">'.$income_category['name'].'<label></div>';   
                                                 }
-                                                $counter++;
                                                 
                                             }
 
