@@ -35,22 +35,7 @@
                         $_SESSION['user_id'] = $dataRow['id'];                      
                         $_SESSION['user_name'] = $dataRow['username'];
                         $_SESSION['user_email'] = $dataRow['email'];
-                        
-                        //we copy user income categories into an array
-                        if($queryResult = $dbConnection->query("SELECT id, name FROM incomes_category_assigned_to_users WHERE user_id = '{$_SESSION['user_id']}'")){
-                            
-                            while($dataRow = $queryResult->fetch_assoc()){
-                                $income_categories[] = $dataRow;
-                            }
-                            
-                            $_SESSION['income_categories'] =  $income_categories;
-                            
-                        }
-                        else{
-                            throw new Exception($dbConnection->error);
-                        }
-                        
-                        
+                               
                         
                         $queryResult->free_result();
                         unset($_SESSION['error_login']);

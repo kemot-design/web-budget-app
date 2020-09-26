@@ -8,10 +8,19 @@
     }
 
     $income_amount = filter_input(INPUT_POST, 'income_value', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    
     $date_of_income = $_POST['income_date'];
+    if($date_of_income <= "0000-00-00") {
+        $date_of_income = date('Y-m-d');
+    }
+
     $income_category = $_POST['income_category'];
+
     $income_comment = $_POST['income_comment'];
+
     $user_id = $_SESSION['user_id'];
+
+    $_SESSION['income_added'] = true;
 
     require_once 'database.php';
 
@@ -22,5 +31,7 @@
     $query->bindParam(':date_of_income', $date_of_income);
     $query->bindParam(':income_comment', $income_comment);
     $query->execute();
+
+    header('Location: addincome.php');
 
 ?>

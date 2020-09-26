@@ -8,6 +8,28 @@
     }
    
 
+    require_once 'database.php';
+
+  //we copy user income categories into an array
+    if($queryResult = $db->query("SELECT id, name FROM incomes_category_assigned_to_users WHERE user_id = '{$_SESSION['user_id']}'")){
+
+        while($dataRow = $queryResult->fetch(PDO::FETCH_ASSOC)){
+            $income_categories[] = $dataRow;
+        }
+        
+        $queryResult = NULL;
+        $db = NULL;
+    }
+    else{
+        throw new Exception($dbConnection->error);
+    }
+
+    if(isset($_SESSION['income_added'])){
+        echo '<script>alert("Dodano nowy przychód")</script>';
+
+        unset ($_SESSION['income_added']);
+    }
+
 ?>
 
 
@@ -110,13 +132,20 @@
 
                                         <?PHP
                                         
-                                            $income_categories = $_SESSION['income_categories'];
+                                            $counter = 0;
                                         
                                             foreach($income_categories as $income_category){
-                                               echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'">'.$income_category['name'].'<label></div>';
+                                                if($income_category === reset($income_categories)){     
+                                                    echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'" checked>'.$income_category['name'].'<label></div>';
+                                                }
+                                                //reset() zwraca pierwszą wartość w tablicy
+                                                else{
+                                                    echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'">'.$income_category['name'].'<label></div>';   
+                                                }
+                                                $counter++;
+                                                
                                             }
-                                            
-                                        
+
                                         ?>
 
                                     </div>
