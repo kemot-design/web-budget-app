@@ -1,3 +1,28 @@
+<?PHP
+
+    session_start();
+
+    if(isset($_SESSION['balance_period']) && $_SESSION['balance_period'] == 4){
+
+        if(isset($_POST['balance_start_date']) && isset($_POST['balance_end_date'])){
+            $_SESSION['balance_start_date'] = $_POST['balance_start_date'];
+            $_SESSION['balance_end_date'] = $_POST['balance_end_date'];
+            
+            header('Location: show_balance.php');
+            exit();
+        }   
+    
+    }
+    else{
+        header("Location: balance.php");
+        exit();
+    }
+   
+
+
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -5,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	
-	<title>MyBudget Add Expense</title>
+	<title>MyBudget Select Balance Period</title>
 	
 	<meta name="description" content="Kontroluj swoje przychody i wydatki, budżet pod kontrolą" />
 	<meta name="keywords" content="budżet, przychody, wydatki, finanse domowe" />
@@ -26,9 +51,9 @@
                 
                 <div class="topbar">
                     <nav class="navbar navbar-expand-sm py-0">
-                        <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+                        <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                         <ul class="navbar-nav ml-auto">
-                            <li class="navbar-item">Zalogowany jako: <span>John Doe</span></li>
+                            <li class="navbar-item">Zalogowany jako: <span><?= $_SESSION['user_name'] ?></span></li>
                         </ul>
                     </nav>
                 </div>	
@@ -51,12 +76,12 @@
 					<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                         
 						<ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="mainmenu.html"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
-                            <li class="nav-item"><a class="nav-link" href="addincome.html"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
-                            <li class="nav-item"><a class="nav-link" href="addexpense.html"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
-                            <li class="nav-item"><a class="nav-link" href="balance.html"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
-                            <li class="nav-item"><a class="nav-link" href="logpage.html"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mainmenu.php"><i class="icon-user-1 menu-icon"></i>Strona główna</a></li>
+                            <li class="nav-item"><a class="nav-link" href="addincome.php"><i class="icon-money-1 menu-icon"></i>Dodaj przychód</a></li>
+                            <li class="nav-item"><a class="nav-link" href="addexpense.php"><i class="icon-basket-1 menu-icon"></i>Dodaj wydatek</a></li>
+                            <li class="nav-item"><a class="nav-link" href="balance.php"><i class="icon-chart-bar menu-icon"></i>Bilans</a></li>
+                            <li class="nav-item"><a class="nav-link" href="settings.php"><i class="icon-wrench menu-icon"></i>Ustawienia</a></li>
+                            <li class="nav-item"><a class="nav-link" href="logout.php"><i class="icon-logout-1 menu-icon"></i>Wyloguj</a></li>
 						</ul>
                         
 					</div>
@@ -74,52 +99,38 @@
 
                             <header>
 
-                                <h2 class="content-header"><i class="icon-money-1"></i> Dodaj przychód </h2>
+                                <h2 class="content-header"> Wybierz okres bilansu </h2>
                               
                             </header>
 
-                            <form action="#" method="POST">
+                            <form action="select_balance_period.php" method="POST">
 
                                 <div class="row">
-
-                                    <label class="formLegend ml-3"> Kwota: <input type="number" name="expenseValue" id="expenseValue" step="0.01"></label>
-
-                                    <label class="formLegend ml-3"> Data: <input type="date" name="expenseDate" class="ml-2"></label>
-                                
-                                </div>	
-
-                                <hr>
-                                
-                                <h3 class="formLegend">Kategoria</h3>
-
-                                <div class="row mt-1">
-                                    <div class="col-md-12">
-
-                                        <div><label><input type="radio" name="paymentMethod" value="1" checked> Wynagrodzenie </label></div>
-                                        <div><label><input type="radio" name="paymentMethod" value="2"> Odsetki </label></div>
-                                        <div><label><input type="radio" name="paymentMethod" value="3"> Sprzedaż na allegro </label></div>
-                                        <div><label><input type="radio" name="paymentMethod" value="3"> Inne </label></div>
-
+                                    <div class="col-sm-12 col-md-6">
+                                        
+                                        <label for="date_of_expense" class="formLegend"> Początek okresu: </label><br/>
+                                        <input class="form-control" type="date" name="balance_start_date">
+                                        
                                     </div>
+                                              
                                 </div>
-
+                                
                                 <hr>
-
+                                
                                 <div class="row">
-
-                                    <div class="col-md-6">
-                                        <label for="comment" class="formLegend"> Komentarz (opcjonalnie): </label><br>
-                                        <textarea id="comment" name="comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
+                                    <div class="col-sm-12 col-md-6">
+                                        
+                                        <label for="date_of_expense" class="formLegend"> Koniec okresu: </label><br/>
+                                        <input class="form-control" type="date" name="balance_end_date">
+                                        
                                     </div>
-                                </div>	
+                                              
+                                </div> 
 
                                 <div class="row py-3">
 
-                                    <div class="col-md-6 my-1">
-                                       <input type="submit" class="btn btn-success btn-block" value="Dodaj">
-                                    </div>
-                                    <div class="col-md-6 my-1">
-                                       <a href="mainmenu.html" class="btn btn-danger btn-block">Anuluj</a>
+                                    <div class="col-md-6">
+                                       <input type="submit" class="btn btn-success btn-block" value="Wybierz">
                                     </div>
 
                                 </div>
@@ -137,7 +148,7 @@
 		</div>
 
 		<footer>
-			<div class="footer position-absolute">
+			<div class="footer">
 				Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
 			</div>
 		</footer>

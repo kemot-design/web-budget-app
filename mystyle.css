@@ -180,21 +180,13 @@ ul > li:hover
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
 
 form{
 	text-align: left;
     font-size: 16px;
 }
-
-input[type=number],
-input[type=date]
-{
-	width: 150px;
-	height: 30px;
-    font-size: 16px;
-}
-
 
 input[type=radio]
 {
@@ -210,7 +202,6 @@ input[type=radio]
 
 .balance-date-picker
 {
-	text-align: right;
     padding: 15px 10px 0 0;
 }
 
@@ -228,6 +219,7 @@ table
     margin: 0;
     padding: 0;
     width: 100%;
+    color: black;
 }
 
 table, td, th
@@ -284,8 +276,9 @@ tr th:nth-child(1)
 .formLegend{
     font-size: 21px;
     color: darkgreen;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0;
 }
 
 hr{
@@ -302,4 +295,11 @@ hr{
 
 .tables{
     margin: 10px 0;
+}
+
+.error{
+	color: red;
+	margin-top: 0px;
+	margin-bottom: 5px;
+    margin-top: 5px;
 }

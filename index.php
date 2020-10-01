@@ -1,3 +1,13 @@
+<?PHP
+    
+    session_start();
+
+    if(isset($_SESSION['login_success'])){
+        header('Location: mainmenu.php');
+    }
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -25,7 +35,7 @@
             
             <nav class="navbar navbar-expand-sm py-0">
                 
-                <a class="navbar-brand" href="index.html"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+                <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                 
             </nav>
             
@@ -69,12 +79,12 @@
 
                         <div class="col-md-6">
                             <p class="text-center mb-1 mt-3">Pierwszy raz tutaj?</p>
-                           <a href="registration.html" class="btn btn-success btn-block">Zarejestruj się</a>
+                           <a href="http://localhost/web-budget-app/registration.php" class="btn btn-success btn-block">Zarejestruj się</a>
                         </div>
                         
                         <div class="col-md-6">
                             <p class="text-center mb-1 mt-3">Masz już konto?</p>
-                           <a href="logpage.html" class="btn btn-primary btn-block">Logowanie</a>
+                           <a href="http://localhost/web-budget-app/logpage.php" class="btn btn-primary btn-block">Logowanie</a>
                         </div>
 
                     </div>
