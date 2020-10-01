@@ -6,3 +6,4 @@
 	$db_name = "my_budget";
 
 ?>
+

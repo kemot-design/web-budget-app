@@ -33,9 +33,9 @@
         $query->bindParam(':income_comment', $income_comment);
         $query->execute();
     }
-    catch(PDOException){
+    catch(PDOException $error){
         echo "Błąd dodania przychodu <br/>";
-        echo "Info: ".$e->getMessage()."<br/>";
+        echo "Info: ".$error->getMessage()."<br/>";
     }
 
     $_SESSION['income_added'] = true;
