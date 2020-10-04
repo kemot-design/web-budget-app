@@ -141,7 +141,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="fontello/css/fontello.css" type="text/css">	
 	
-
 </head>
 
 <body>
@@ -280,7 +279,7 @@
                                 ?>
                                 
                             </div>
-                            
+
                             <form action="show_balance.php" method="POST">
                                 <div class="row py-3"> 
                                     <div class="col-md-6">
