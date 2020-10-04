@@ -66,7 +66,7 @@
                     <nav class="navbar navbar-expand-sm py-0">
                         <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                         <ul class="navbar-nav ml-auto">
-                            <li class="navbar-item">Zalogowany jako: <span>John Doe</span></li>
+                            <li class="navbar-item">Zalogowany jako: <span><?= $_SESSION['user_name'] ?></span></li>
                         </ul>
                     </nav>
                 </div>	
@@ -119,45 +119,52 @@
                             <form action="add_new_income.php" method="POST">
 
                                 <div class="row">
+                                    <div class="col-sm-10 offset-sm-1">
 
-                                    <label class="formLegend ml-3"> Kwota: <input type="number" name="income_value" id="expenseValue" step="0.01"></label>
-
-                                    <label class="formLegend ml-3"> Data: <input type="date" name="income_date" class="ml-2"></label>
-                                
+                                        <label class="formLegend" for="income_value"> Kwota </label>
+                                        <input class="form-control" type="number" name="income_value" id="income_value" step="0.01">
+                                        
+                                    </div>
                                 </div>	
 
                                 <hr>
                                 
-                                <h3 class="formLegend">Kategoria</h3>
-
-                                <div class="row mt-1">
-                                    <div class="col-md-12">
-
-                                        <?PHP
-                                                                                
-                                            foreach($income_categories as $income_category){
-                                                if($income_category === reset($income_categories)){     
-                                                    echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'" checked>'.$income_category['name'].'<label></div>';
-                                                }
-                                                //reset() zwraca pierwszą wartość w tablicy
-                                                else{
-                                                    echo '<div><label><input type="radio" name="income_category" value="'.$income_category['id'].'">'.$income_category['name'].'<label></div>';   
-                                                }
-                                                
-                                            }
-
-                                        ?>
-
+                                <div class="row">
+                                    <div class="col-sm-10 offset-sm-1">
+                                        
+                                        <label for="income_date" class="formLegend"> Data </label>
+                                        <input class="form-control" type="date" name="income_date">
+                                
                                     </div>
+                                </div>
+
+                                <hr>
+                                
+                                <div class="row mt-1 ">
+                                    <div class="col-sm-10 offset-sm-1">
+                                    
+                                        <label for="income_category" class="formLegend">Kategoria</label><br/>
+                                        <select class="custom-select mr-sm-2" name="income_category">
+                                            <option value="0" selected>Wybierz kategorię...</option>
+                                            
+                                            <?PHP
+                                                foreach($income_categories as $income_category){
+                                                    echo '<option value ="'.$income_category['id'].'">'.$income_category['name'].'</option>';    
+                                                } 
+                                            ?>
+                                            
+                                        </select>   
+                                    </div>    
                                 </div>
 
                                 <hr>
 
                                 <div class="row">
-
-                                    <div class="col-md-6">
-                                        <label for="comment" class="formLegend"> Komentarz (opcjonalnie): </label><br>
-                                        <textarea id="comment" name="income_comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
+                                    <div class="col-sm-10 offset-sm-1">
+                                        
+                                        <label for="comment" class="formLegend"> Komentarz (opcjonalnie) </label><br>
+                                        <textarea class="form-control" id="comment" name="income_comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
+                                        
                                     </div>
                                 </div>	
 
@@ -185,7 +192,7 @@
 		</div>
 
 		<footer>
-			<div class="footer position-absolute">
+			<div class="footer">
 				Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
 			</div>
 		</footer>

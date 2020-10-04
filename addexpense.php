@@ -70,7 +70,7 @@
                     <nav class="navbar navbar-expand-sm py-0">
                         <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
                         <ul class="navbar-nav ml-auto">
-                            <li class="navbar-item">Zalogowany jako: <span>John Doe</span></li>
+                            <li class="navbar-item">Zalogowany jako: <span><?= $_SESSION['user_name'] ?></span></li>
                         </ul>
                     </nav>
                 </div>	
@@ -123,12 +123,12 @@
                             <form action="add_new_expense.php" method="POST">
 
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
 
-                                       <label for="expense_amount" class="formLegend">Kwota </label><br/>
+                                    <div class="col-sm-10 offset-sm-1">
+                                        <label for="expense_amount" class="formLegend">Kwota</label>
                                         <input class="form-control" type="number" name="expense_amount" id="expense_amount" step="0.01">
-                                        
-                                    </div>                                    
+                                    </div>
+                                    
                                 </div>
                                 
                                 <?PHP
@@ -143,9 +143,9 @@
                                 <hr>
                                 
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-10 offset-sm-1">
                                         
-                                        <label for="date_of_expense" class="formLegend"> Data: </label><br/>
+                                        <label for="date_of_expense" class="formLegend"> Data </label><br/>
                                         <input class="form-control" type="date" name="date_of_expense">
                                         
                                     </div>
@@ -164,7 +164,7 @@
                                 <hr>
 
                                 <div class="row mt-1">
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-10 offset-sm-1">
                                         
                                         <label for="payment_method" class="formLegend"> Metoda płatności </label><br/>
                                         <select class="custom-select mr-sm-2" name="payment_method">
@@ -195,7 +195,7 @@
                                 <hr>
                                 
                                 <div class="row mt-1 ">
-                                    <div class="col-sm-12 col-md-6"> 
+                                    <div class="col-sm-10 offset-sm-1">
                                     
                                         <label for="expense_category" class="formLegend">Kategoria</label><br/>
                                         <select class="custom-select mr-sm-2" name="expense_category">
@@ -223,9 +223,9 @@
                                 <hr>
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-sm-10 offset-sm-1">
                                         
-                                        <label for="comment" class="formLegend"> Komentarz (opcjonalnie): </label><br>
+                                        <label for="comment" class="formLegend"> Komentarz (opcjonalnie) </label><br>
                                         <textarea class="form-control" id="comment" name="expense_comment" rows="4" cols="44" placeholder="Twój komentarz ..."></textarea>
                                         
                                     </div>
@@ -233,10 +233,10 @@
 
                                 <div class="row py-3">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-1">
                                        <input type="submit" class="btn btn-success btn-block" value="Dodaj">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-1">
                                        <a href="mainmenu.html" class="btn btn-danger btn-block">Anuluj</a>
                                     </div>
 
