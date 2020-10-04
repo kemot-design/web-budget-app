@@ -146,8 +146,8 @@
 
 <body>
 
-	<div id="page-container">	
-		<div id="content-wrap">
+	<div class="page-container">	
+		<div class="content-wrap">
 		
 			<header>
                 
@@ -282,8 +282,8 @@
                             </div>
                             
                             <form action="show_balance.php" method="POST">
-                                <div class="row my-2"> 
-                                    <div class="col-sm-12 col-md-6">
+                                <div class="row py-3"> 
+                                    <div class="col-md-6">
 
                                         <label for="balance-date"> Wybierz okres: </label>
                                         <select	class="custom-select mb-2" name="balance_period" id="balance_period">
@@ -294,7 +294,7 @@
                                             <option value="4">Niestandardowa</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-1">
                                        <input type="submit" class="btn btn-success btn-block mt-3" value="Pokaż bilans">
                                     </div>
                                 </div>

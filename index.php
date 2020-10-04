@@ -58,16 +58,20 @@
                                 <h2 class="content-header"> Dlaczego warto prowadzić budżet? </h2>
                             </header>					
 
-                            <blockquote>
-                                <q>Zrobić budżet to wskazać swoim pieniądzom, dokąd mają iść, zamiast zastanawiać się, gdzie się rozeszły</q>
+                            <blockquote class="blockquote text-left">
+                                <p class="mb-0">Zrobić budżet to wskazać swoim pieniądzom, dokąd mają iść, zamiast zastanawiać się, gdzie się rozeszły</p>
+                                <footer class="blockquote-footer">John C. Maxwell</footer>
                             </blockquote> 
 
-                            <p>	
-                                Te słowa John'a C. Maxwell'a, jednego z największych autoryterów w dziedzinie przywódctwa, bardzo dobrze oddają ideę stojącą za tworzeniem budżetu. Uważamy, że budżet to plan dla naszych pieniędzy, plan który pozwala zapanować nad tym potężnym narzędziem i sprawić aby to pieniądze pracowały dla nas, a nie my dla pieniędzy.
-                            </p>
-
+                            <!--<div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <img src="img/money_plant.jpg" alt="money plant" />
+                                     Photo by Micheile Henderson on Unsplash
+                                </div>
+                            </div> -->
+                            
                             <p>
-                                Dlatego zachęcam Cię do dołączenia do grona naszych użytkowników i sprawdzenia jak nasze narzędzia mogą odmienić <strong> Twoje </strong>życie!
+                                Zachęcam Cię do dołączenia do grona naszych użytkowników i sprawdzenia jak kontrola finansów osobistych może odmienić <strong> Twoje </strong>życie!
 
                             </p>					
                         </section>

@@ -106,7 +106,7 @@
                             <form action="select_balance_period.php" method="POST">
 
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-10 offset-sm-1">
                                         
                                         <label for="date_of_expense" class="formLegend"> Początek okresu: </label><br/>
                                         <input class="form-control" type="date" name="balance_start_date">
@@ -118,7 +118,7 @@
                                 <hr>
                                 
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-10 offset-sm-1">
                                         
                                         <label for="date_of_expense" class="formLegend"> Koniec okresu: </label><br/>
                                         <input class="form-control" type="date" name="balance_end_date">
@@ -129,7 +129,7 @@
 
                                 <div class="row py-3">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 offset-md-3">
                                        <input type="submit" class="btn btn-success btn-block" value="Wybierz">
                                     </div>
 

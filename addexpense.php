@@ -233,10 +233,10 @@
 
                                 <div class="row py-3">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-1">
                                        <input type="submit" class="btn btn-success btn-block" value="Dodaj">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 my-1">
                                        <a href="mainmenu.html" class="btn btn-danger btn-block">Anuluj</a>
                                     </div>
 
