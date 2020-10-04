@@ -7,38 +7,56 @@
         exit();
     }
 
-    if(isset($_POST['balance_period']) && $_POST['balance_period'] != 0){
+    if(isset($_POST['balance_period']) && $_POST['balance_period'] == 4){
+        $_SESSION['balance_period'] = $_POST['balance_period'];
+        header('Location: select_balance_period.php');
+        exit();
+    }
+    
+    elseif(isset($_POST['balance_period']) && $_POST['balance_period'] != 0){
         
         $balance_period = $_POST['balance_period'];
         
-            if($balance_period == 4){
-                $_SESSION['balance_period'] = $balance_period;
-                header('Location: select_balance_period.php');
-                exit();
-            }
-        
         require_once "database.php";
-        $query_defined_by_period = "";
+        $income_query = "";
+        $expense_query = "";
+        
+        $balance_header = "";
 
         try{
             
             switch($balance_period){
                     
                 case 1:
-                    $query_defined_by_period = "SELECT name, SUM(amount) AS IncomesSum FROM incomes_category_assigned_to_users, incomes WHERE incomes.user_id = :user_id AND date_of_income >= LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH AND date_of_income < LAST_DAY(CURDATE()) + INTERVAL 1 DAY AND incomes.income_category_assigned_to_user_id = incomes_category_assigned_to_users.id GROUP BY name ORDER BY IncomesSum DESC";
+                    $income_query = "SELECT name, SUM(amount) AS IncomesSum FROM incomes_category_assigned_to_users, incomes WHERE incomes.user_id = :user_id AND date_of_income >= LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH AND date_of_income < LAST_DAY(CURDATE()) + INTERVAL 1 DAY AND incomes.income_category_assigned_to_user_id = incomes_category_assigned_to_users.id GROUP BY name ORDER BY IncomesSum DESC";
+                    
+                    $expense_query = "SELECT name, SUM(amount) AS expensesSum FROM expenses_category_assigned_to_users, expenses WHERE expenses.user_id = :user_id AND date_of_expense >= LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH AND date_of_expense < LAST_DAY(CURDATE()) + INTERVAL 1 DAY AND expenses.expense_category_assigned_to_user_id = expenses_category_assigned_to_users.id GROUP BY name ORDER BY expensesSum DESC";
+                    
+                    $balance_header = "BILANS - bierzący miesiąc";
+                    
                     break;
                     
                 case 2:
-                    $query_defined_by_period = "SELECT name, SUM(amount) AS IncomesSum FROM incomes_category_assigned_to_users, incomes WHERE incomes.user_id = :user_id AND date_of_income >= (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 2 MONTH) AND date_of_income < (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH) AND incomes.income_category_assigned_to_user_id = incomes_category_assigned_to_users.id GROUP BY name ORDER BY IncomesSum DESC";
+                    $income_query = "SELECT name, SUM(amount) AS IncomesSum FROM incomes_category_assigned_to_users, incomes WHERE incomes.user_id = :user_id AND date_of_income >= (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 2 MONTH) AND date_of_income < (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH) AND incomes.income_category_assigned_to_user_id = incomes_category_assigned_to_users.id GROUP BY name ORDER BY IncomesSum DESC";
+                    
+                    $expense_query = "SELECT name, SUM(amount) AS expensesSum FROM expenses_category_assigned_to_users, expenses WHERE expenses.user_id = :user_id AND date_of_expense >= (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 2 MONTH) AND date_of_expense < (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH) AND expenses.expense_category_assigned_to_user_id = expenses_category_assigned_to_users.id GROUP BY name ORDER BY expensesSum DESC";
+                    
+                    $balance_header = "BILANS - poprzedni miesiąc";
+                    
                     break;
                     
                 case 3:
-                    $query_defined_by_period = "SELECT name, SUM(amount) AS IncomesSum FROM incomes_category_assigned_to_users, incomes WHERE incomes.user_id = :user_id AND YEAR(date_of_income) = YEAR(CURDATE()) AND incomes.income_category_assigned_to_user_id = incomes_category_assigned_to_users.id GROUP BY name ORDER BY IncomesSum DESC";
+                    $income_query = "SELECT name, SUM(amount) AS IncomesSum FROM incomes_category_assigned_to_users, incomes WHERE incomes.user_id = :user_id AND YEAR(date_of_income) = YEAR(CURDATE()) AND incomes.income_category_assigned_to_user_id = incomes_category_assigned_to_users.id GROUP BY name ORDER BY IncomesSum DESC";
+                    
+                    $expense_query = "SELECT name, SUM(amount) AS expensesSum FROM expenses_category_assigned_to_users, expenses WHERE expenses.user_id = :user_id AND YEAR(date_of_expense) = YEAR(CURDATE()) AND expenses.expense_category_assigned_to_user_id = expenses_category_assigned_to_users.id GROUP BY name ORDER BY expensesSum DESC";
+                    
+                    $balance_header = "BILANS - bierzący rok";
+                    
                     break;
                     
             }
             
-            $query = $db->prepare($query_defined_by_period);
+            $query = $db->prepare($income_query);
             $query->bindParam(':user_id', $_SESSION['user_id']);
             $query->execute();
 
@@ -46,23 +64,7 @@
                 $incomes[] = $dataRow;
             }
             
-            switch($balance_period){
-                    
-                case 1:
-                    $query_defined_by_period = "SELECT name, SUM(amount) AS expensesSum FROM expenses_category_assigned_to_users, expenses WHERE expenses.user_id = :user_id AND date_of_expense >= LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH AND date_of_expense < LAST_DAY(CURDATE()) + INTERVAL 1 DAY AND expenses.expense_category_assigned_to_user_id = expenses_category_assigned_to_users.id GROUP BY name ORDER BY expensesSum DESC";
-                    break;
-                    
-                case 2:
-                    $query_defined_by_period = "SELECT name, SUM(amount) AS expensesSum FROM expenses_category_assigned_to_users, expenses WHERE expenses.user_id = :user_id AND date_of_expense >= (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 2 MONTH) AND date_of_expense < (LAST_DAY(CURDATE()) + INTERVAL 1 DAY - INTERVAL 1 MONTH) AND expenses.expense_category_assigned_to_user_id = expenses_category_assigned_to_users.id GROUP BY name ORDER BY expensesSum DESC";
-                    break;
-                    
-                case 3:
-                    $query_defined_by_period = "SELECT name, SUM(amount) AS expensesSum FROM expenses_category_assigned_to_users, expenses WHERE expenses.user_id = :user_id AND YEAR(date_of_expense) = YEAR(CURDATE()) AND expenses.expense_category_assigned_to_user_id = expenses_category_assigned_to_users.id GROUP BY name ORDER BY expensesSum DESC";
-                    break;
-    
-            }
-            
-            $query = $db->prepare($query_defined_by_period);
+            $query = $db->prepare($expense_query);
             $query->bindParam(':user_id', $_SESSION['user_id']);
             $query->execute();
 
@@ -80,7 +82,7 @@
         $sum_of_expenses = 0;    
         
     }
-    else if(isset($_SESSION['balance_start_date']) && $_SESSION['balance_end_date']){
+    elseif(isset($_SESSION['balance_start_date']) && $_SESSION['balance_end_date']){
     
         require_once "database.php";
         
@@ -103,6 +105,11 @@
         while($dataRow = $query->fetch(PDO::FETCH_ASSOC)){
             $incomes[] = $dataRow;
         }
+        
+        $balance_header = "Bilans  ".$_SESSION['balance_start_date']." - ".$_SESSION['balance_end_date'];
+        
+        unset($_SESSION['balance_start_date']);
+        unset($_SESSION['balance_end_date']);
         
         $sum_of_incomes = 0;
         $sum_of_expenses = 0; 
@@ -195,7 +202,7 @@
                             
                             <header>
 
-                                <h2 class="content-header"><i class="icon-chart-bar"></i> Bilans </h2>
+                                <h2 class="content-header"><i class="icon-chart-bar"></i> <?= $balance_header ?> </h2>
 
                             </header>								
 

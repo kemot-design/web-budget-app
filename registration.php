@@ -167,98 +167,105 @@
 
 <body>
 
-	<header>
-                
-        <div class="topbar">
-            
-            <nav class="navbar navbar-expand-sm py-0">
-                
-                <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
-                
-            </nav>
-            
-        </div>	
+    <div class="page-container">	
+		<div class="content-wrap">
     
-    </header>
+            <header>
+
+                <div class="topbar">
+
+                    <nav class="navbar navbar-expand-sm py-0">
+
+                        <a class="navbar-brand" href="index.php"><img src="img/budget.png" alt="Logo"/><span>My</span>Budget</a>
+
+                    </nav>
+
+                </div>	
+
+            </header>
+
+            <main>
+
+                <article>
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-xl-4 offset-xl-4 my-4 content">
+
+                                <header>
+                                    <h1 class="content-header">REJESTRACJA</h1>
+                                </header>
+
+                                <form action="#" method="post">
+
+                                    <div class="input-container">
+                                        <i class="icon-user-1 icon"></i>
+                                        <input class="input-field" type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
+                                    </div>
+
+                                    <?PHP
+                                        if(isset($_SESSION['er_login'])){
+                                            echo '<div class="error">'.$_SESSION['er_login'].'</div>';
+                                            unset ($_SESSION['er_login']);
+                                        }
+                                    ?>
+
+                                    <div class="input-container">
+                                        <i class="icon-mail-1 icon"></i>
+                                        <input class="input-field" type="text" name="useremail" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'">
+                                    </div>
+
+                                    <?PHP
+                                        if(isset($_SESSION['er_email'])){
+                                            echo '<div class="error">'.$_SESSION['er_email'].'</div>';
+                                            unset($_SESSION['er_email']);
+                                        }
+
+                                    ?>
+
+                                    <div class="input-container">
+                                        <i class="icon-lock-1 icon"></i>
+                                        <input class="input-field" type="password" name="user-password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
+                                    </div>	
+                                    <?PHP
+                                        if(isset($_SESSION['er_pass'])){
+                                            echo '<div class="error">'.$_SESSION['er_pass'].'</div>';
+                                            unset($_SESSION['er_pass']);
+                                        }
+
+                                    ?>
+
+                                    <div class="input-container">
+                                        <i class=" icon-lock-open-alt icon"></i>
+                                        <input class="input-field" type="password" name="confirmation-password" placeholder="potwierdź hasło" onfocus="this.placeholder=''" onblur="this.placeholder='confirm password'">
+                                    </div>	
+
+                                    <input type="submit" class="btn btn-success btn-block my-4" name="register" value="Zarejestruj">
+
+                                </form>
+
+                            </div>    
+
+                        </div>    
+
+                    </div>
+
+                </article>
+
+            </main>
+            
+        </div>
+
+        <footer>
+            <div class="footer">
+                Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
+            </div>
+        </footer>
 	
-	<main>
-	
-		<article>
-		
-			<div class="container">
-                
-                <div class="row">
-				
-                    <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-xl-4 offset-xl-4 my-4 content">
-
-                        <header>
-                            <h1 class="content-header">REJESTRACJA</h1>
-                        </header>
-
-                        <form action="#" method="post">
-
-                            <div class="input-container">
-                                <i class="icon-user-1 icon"></i>
-                                <input class="input-field" type="text" name="userlogin" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'">
-                            </div>
-                            
-                            <?PHP
-                                if(isset($_SESSION['er_login'])){
-                                    echo '<div class="error">'.$_SESSION['er_login'].'</div>';
-                                    unset ($_SESSION['er_login']);
-                                }
-                            ?>
-                                
-                            <div class="input-container">
-                                <i class="icon-mail-1 icon"></i>
-                                <input class="input-field" type="text" name="useremail" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'">
-                            </div>
-                            
-                            <?PHP
-                                if(isset($_SESSION['er_email'])){
-                                    echo '<div class="error">'.$_SESSION['er_email'].'</div>';
-                                    unset($_SESSION['er_email']);
-                                }
-                            
-                            ?>
-
-                            <div class="input-container">
-                                <i class="icon-lock-1 icon"></i>
-                                <input class="input-field" type="password" name="user-password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='password'">
-                            </div>	
-                            <?PHP
-                                if(isset($_SESSION['er_pass'])){
-                                    echo '<div class="error">'.$_SESSION['er_pass'].'</div>';
-                                    unset($_SESSION['er_pass']);
-                                }
-                            
-                            ?>
-
-                            <div class="input-container">
-                                <i class=" icon-lock-open-alt icon"></i>
-                                <input class="input-field" type="password" name="confirmation-password" placeholder="potwierdź hasło" onfocus="this.placeholder=''" onblur="this.placeholder='confirm password'">
-                            </div>	
-
-                            <input type="submit" class="btn btn-success btn-block my-4" name="register" value="Zarejestruj">
-
-                        </form>
-
-                    </div>    
-                    
-                </div>    
-
-			</div>
-		
-		</article>
-		
-	</main>
-	
-	<footer>
-			<div class="footer position-absolute">
-				Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
-			</div>
-    </footer>
-	
+    </div>    
+        
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

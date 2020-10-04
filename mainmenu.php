@@ -90,11 +90,21 @@
                             </header>
 
                             <div class="row p-3">
+                                
+                                <div class="col-sm-6">
+                                     <img src="img/savings.jpg" alt="savings">
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>Monitoruj przychody i wydatki, zrób plan dla swoich pieniędzy, inwestuj nadwyżki, a póżniej zbieraj plony swoich mądrych decyzji finansowych.</p>
+                                    <p>Ciesze się, że jesteś z nami i zapraszam do korzystania z naszej aplikacji.</p>
+                                </div>
 
-                                <p>Najważniejszą rzeczą w prowadzeniu budżetu jest zaplanowanie tego na co wydajemy własne ciężko zarobione pieniądze. Wiadomo, że każdy człowiek jest inny, ma inne potrzeby i priorytety, jednak w comiesięcznym budżecie statystycznego gospodarstwa domowego są pozycje, które występują zawsze - utrzymanie domu/mieszkania, jedzenie, transport i wiele innych. I teraz, żeby planować wydatki, które będą mniej więcej pokrywać się kwotowo z rzeczywistością, musimy wpierw zdać sobię sprawę na co i ile wydajemy - a proszę mi wierzyć, możemy się nieźle zdziwić. Przydatnym narzędziem będzie tutaj spisywanie wydatków. Jeśli poświęcimy temu zajęciu trochę czasu możemy uświadomić sobie gdzie przeciekają nasze pieniądze, ile miesięcznie tracimy na głupoty, a ile moglibyśmy odłożyć na wymarzony dom, inwestycje czy wakacje. </p>
+                                <!--<p>Najważniejszą rzeczą w prowadzeniu budżetu jest zaplanowanie tego na co wydajemy własne ciężko zarobione pieniądze. Wiadomo, że każdy człowiek jest inny, ma inne potrzeby i priorytety, jednak w comiesięcznym budżecie statystycznego gospodarstwa domowego są pozycje, które występują zawsze - utrzymanie domu/mieszkania, jedzenie, transport i wiele innych. I teraz, żeby planować wydatki, które będą mniej więcej pokrywać się kwotowo z rzeczywistością, musimy wpierw zdać sobię sprawę na co i ile wydajemy - a proszę mi wierzyć, możemy się nieźle zdziwić. Przydatnym narzędziem będzie tutaj spisywanie wydatków. Jeśli poświęcimy temu zajęciu trochę czasu możemy uświadomić sobie gdzie przeciekają nasze pieniądze, ile miesięcznie tracimy na głupoty, a ile moglibyśmy odłożyć na wymarzony dom, inwestycje czy wakacje. </p>
                                 <p>Po pewnym okresie warto zajrzeć do opcji Przeglądaj Bilans, gdzie zgromadzone będą wszystkie informacje na temat wpływów i wydatków, z podziałem na kategorie, zobaczysz wtedy czy z miesiąca na misiąc stajesz się bogatszy czy może wręcz przeciwnie i czas na zmiany.</p>
                                 <p>W ustawieniach można edytować domyślne nazwy kategorii wydatków i przychodów. </p>
-                                <p> Zapraszam do korzystania z aplikacji.</p>
+                                <p> Zapraszam do korzystania z aplikacji.</p> -->
+                                
+                                
 
                             </div>    
 
@@ -109,7 +119,7 @@
 		</div>	
 		
 		<footer>
-			<div class="footer position-absolute">
+			<div class="footer">
 				Aplikacja budżetowa by Kemot. Wszelkie prawa zastrzeżone &copy; - 2020
 			</div>
 		</footer>
